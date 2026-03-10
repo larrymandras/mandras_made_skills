@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "type": "skills",
+  "items": [
+    { "name": "digital-art-factory", "description": "AI art generation pipeline — prompt engineering, image generation, and publishing", "source": "Mandras_Made_Skills", "category": "creative" },
+    { "name": "caught-on-camera", "description": "AI video content creation pipeline — scripting, media generation, and platform publishing", "source": "Mandras_Made_Skills", "category": "creative" },
+    { "name": "cryptidvlog", "description": "Cryptid vlog content pipeline — character generation, episode scripting, and multi-platform distribution", "source": "Mandras_Made_Skills", "category": "creative" }
+  ]
+}
