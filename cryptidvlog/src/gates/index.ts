@@ -38,8 +38,30 @@ export async function runAllGates(params: {
   scriptText: string;
   prevSceneLastFrameBase64?: string;
   currentSceneFirstFrameBase64?: string;
+  targetPose?: string;
 }): Promise<GateRunnerResult> {
   logger.info('Gate runner: starting all gates', { sceneId: params.sceneId });
-  // TODO: run gates in order; on gate 4 or 7 hard fail, set hardFail=true and return early
-  throw new Error('Gate runner not implemented');
+
+  const result: GateRunnerResult = { pass: true, hardFail: false };
+
+  // Gate 1 — Character Consistency
+  const gate1 = await runGate1(
+    params.sceneId,
+    params.characterName,
+    params.frameBase64Images,
+    params.targetPose,
+  );
+  result.gate1 = gate1;
+  if (!gate1.pass) {
+    result.pass = false;
+  }
+
+  // TODO: Gate 2 — Continuity
+  // TODO: Gate 3 — Face detection
+  // TODO: Gate 4 — Policy (hard-fail)
+  // TODO: Gate 5 — Voice consistency
+  // TODO: Gate 6 — Crop / framing
+  // TODO: Gate 7 — Watermark (hard-fail)
+
+  return result;
 }

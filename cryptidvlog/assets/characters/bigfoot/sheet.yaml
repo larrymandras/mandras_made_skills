@@ -1,0 +1,123 @@
+version: 1
+name: Bigfoot
+species: North American Sasquatch (Sasquahtch'en)
+
+physical:
+  height_ft: [7, 8]
+  build: "Stocky, barrel-chested, and solid like a redwood stump. Broad shoulders, thick limbs, moves with a deliberate lumbering grace. Looks like he could flip a truck but would rather carry your groceries."
+  fur:
+    color: "Dark brown with warm auburn highlights in sunlight"
+    texture: "Dense, coarse outer coat over a softer undercoat. Naturally windswept and slightly mossy-smelling. Well-groomed by forest standards — he combs it with a pinecone."
+    seasonal_variation: "Darkens to near-black in winter. Gets sun-bleached reddish tips in summer. Sheds moderately in spring — birds collect it for nests, which he considers a compliment."
+  face:
+    eyes: "Deep amber-gold, warm and steady. Crinkle at the corners when he smiles, which is often. Pupils barely react to surprises — this man has seen it all."
+    brow: "Massive, prominent brow ridge that gives him a permanent look of mild skepticism. One eyebrow raises independently when he's unimpressed."
+    nose: "Broad, dark brown, slightly upturned. Excellent sense of smell — can identify coffee roast origin at fifty paces."
+    mouth: "Wide with full lips. Default position is a slight closed-mouth smile. Has a booming laugh that echoes through valleys."
+    teeth: "Large, flat, well-maintained. Bright white from centuries of chewing birch bark. Gap between the front two that shows when he grins."
+    expression_default: "Relaxed half-smile with one eyebrow slightly raised — the face of a being who has heard your nonsense before and is choosing patience."
+  hands: "Massive, rough-palmed, with thick calloused fingers permanently stained with soil and sap. Surprisingly gentle — can transplant a seedling without bruising a root. Claws are blunt and natural."
+  feet: "Size 24. The famous prints. Wide, flat, with thick leathery soles that can walk on any terrain barefoot. He's proud of them — calls them 'the originals.'"
+  distinguishing_marks:
+    - "Three parallel claw scars across the right shoulder from a 1847 disagreement with a grizzly (he won; they're friends now)"
+    - "A notch in the left ear from a logging-era close call"
+    - "Moss genuinely grows on his back if he sits still long enough, which he considers a feature"
+  clothing:
+    - "A well-worn flannel shirt, sleeves always rolled up, buttons straining across the chest. Rotates between red-black and green-black plaid"
+    - "A hand-carved wooden bead bracelet on the left wrist — never explained, clearly meaningful"
+    - "Occasionally wears a wide-brimmed hat made of woven cedar bark when it rains, which he insists is 'the original Gore-Tex'"
+
+voice:
+  range_hz: [80, 180]
+  timbre: "Deep, resonant baritone like a cello played inside a log cabin. Warm and unhurried. When he laughs, you feel it in your sternum. Can drop to a subsonic rumble when genuinely angry, which is rare and terrifying."
+  speech_patterns:
+    - "Speaks slowly and deliberately, as if each word has been composted for a season before use"
+    - "Uses nature metaphors for everything — 'That plan has shallow roots, bud' or 'Let it decompose in your mind a while'"
+    - "Leaves long, comfortable pauses in conversation that Yeti inevitably fills with panic"
+    - "Occasionally uses archaic phrases from the 1800s without realizing they're outdated"
+  catchphrases:
+    - "Brother, I've been here 400 years. I've seen worse."
+    - "That's not a problem. That's just Tuesday with extra steps."
+    - "You know what never crashes? A forest."
+    - "I don't need to Google it. I LIVED it."
+    - "The trees remember, even if you don't."
+  verbal_tics:
+    - "Calls everyone 'brother,' 'bud,' or 'friend' regardless of species or relationship"
+    - "Hums tunelessly while thinking — often old folk songs that haven't been recorded anywhere"
+    - "Says 'mm-hmm' in a deep rumble while someone else is talking, like a therapist who's also a mountain"
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "Real brand names (use parodies)"
+    - "References to real people by name"
+    - "Anything genuinely enthusiastic about technology — mild tolerance is his ceiling"
+
+personality:
+  core_traits:
+    - "Unflappable — 400 years of existence have given him a patience that borders on geological"
+    - "Skeptical pragmatist — believes in what he can see, smell, and grow. Thinks most 'innovations' are old ideas in new packaging"
+    - "Quietly wise — drops profound observations casually, then immediately undercuts them with something mundane"
+    - "Stubbornly analog — not anti-technology per se, but deeply convinced that most of it is unnecessary"
+    - "Protective — will never admit he worries about Yeti, but rearranges his entire schedule around keeping that nervous wreck safe"
+  fears:
+    - "Deforestation — the only thing that genuinely shakes his composure"
+    - "Being forgotten by the forest — that one day the land won't recognize him"
+    - "That Yeti's paranoia might actually be right about something big, and he dismissed it"
+    - "Fancy restaurants (too many forks, not enough portions)"
+  loves:
+    - "His garden — a sprawling, unlabeled botanical masterpiece spanning three acres that he tends daily"
+    - "Artisanal coffee, hand-roasted over a campfire in a cast-iron pan he's owned since 1923"
+    - "Thunderstorms — sits on his porch and watches them like other people watch TV"
+    - "Teaching — will happily explain mycology, tree identification, or fermentation to anyone who asks"
+    - "The smell of petrichor, old-growth cedar, and whatever Yeti's terrible tea is supposed to be"
+  quirks:
+    - "Has strong, unprompted opinions about coffee that border on violent — once ended a friendship over instant coffee"
+    - "Names every tree in his territory. Knows their birthdays. Gets sad when one falls."
+    - "Cannot figure out touchscreens — his fingers are too big and too calloused. Keeps accidentally calling people."
+    - "Collects interesting rocks. Has thousands. Can tell you exactly where and when he found each one."
+    - "Falls asleep within 60 seconds of sitting in any sunbeam, regardless of what's happening around him"
+
+relationships:
+  yeti:
+    dynamic: "The calm anchor to Yeti's storm. Part best friend, part reluctant tech support customer, part exasperated older brother. Bigfoot would never say it, but Yeti is the most interesting person he's met in 400 years."
+    bigfoot_sees_yeti_as: "A brilliant disaster. Like watching a squirrel try to drive a car — horrifying, fascinating, and somehow occasionally successful. The little brother he never asked for but wouldn't trade."
+    tension_source: "Yeti drags Bigfoot into digital/modern situations he hates. Bigfoot's dismissiveness of Yeti's theories sometimes crosses from funny into hurtful. Bigfoot's refusal to learn basic tech creates problems Yeti has to fix."
+    running_jokes:
+      - "Bigfoot's coffee snobbery escalates every episode — he's now rating campfire roasts on a 200-point scale he invented"
+      - "Yeti tries to teach Bigfoot a new piece of technology each episode; Bigfoot breaks it in an increasingly creative way each time"
+      - "Bigfoot claims to have 'been there' for every major historical event in the Pacific Northwest and his stories never quite add up but can't be disproven"
+      - "Yeti keeps finding Bigfoot asleep in sunbeams at the worst possible moments"
+      - "Bigfoot insists he doesn't understand memes but occasionally quotes one perfectly, then denies it"
+
+backstory:
+  origin: "Born in the old-growth forests of what is now the Pacific Northwest, long before European contact. Lived alongside indigenous peoples who understood the forest's rules. Watched the fur trade, the logging boom, the railroad, the highways, and the tech industry roll through his home. Adapted each time — moved deeper, stayed quieter. Found his current territory in the 1970s when the logging companies moved on and the second growth started coming back. Has been tending it ever since. Met Yeti online (Yeti emailed every cryptid-adjacent address he could find) and reluctantly agreed to meet, then reluctantly agreed to co-host a vlog, then reluctantly admitted he enjoys it."
+  arc: "Learning to engage with the modern world instead of just enduring it. Accepting that some change is necessary, and that caring about something new (like Yeti, like the vlog, like their audience) doesn't mean betraying the old things he loves."
+  secrets:
+    - "Has a handwritten journal spanning 400 years hidden in a hollow tree — it's the most complete ecological record of the Pacific Northwest in existence"
+    - "Once appeared in the background of a famous 1967 film footage on PURPOSE because he was trying to warn hikers about a washout downstream. Has regretted it every day since."
+    - "Understands technology far better than he lets on — he plays dumb because he genuinely believes most of it makes people miserable, and he doesn't want to encourage Yeti"
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+    - "Show genuine cruelty toward Yeti — his teasing is always affectionate and never targets Yeti's real insecurities"
+    - "Be impressed by technology — mild grudging acknowledgment is the maximum"
+  always:
+    - "Move slowly and deliberately — no sudden movements unless something threatens Yeti or the forest"
+    - "Reference nature, seasons, or growing things at least once in any extended dialogue"
+    - "Maintain consistent fur color, eye color, and body proportions"
+    - "Have dirt or soil visible somewhere on his hands or arms at all times"
+
+visual_direction:
+  color_palette: ["#5C3A1E", "#8B6914", "#2D5016", "#D4A956", "#1B3D0A"]
+  lighting_notes: "Warm golden-hour tones. Bigfoot looks best in dappled forest light, campfire glow, or soft overcast Pacific Northwest grey. Harsh artificial light makes him look uncomfortable and out of place — use this when he's forced into modern settings. Volumetric fog and god-rays enhance his silhouette."
+  camera_angles_preferred: ["Medium-wide showing him in his environment", "Low angle through undergrowth looking up at him", "Steady over-the-shoulder as he works in the garden"]
+  environment_associations: ["A hand-built log cabin with a wraparound porch and rocking chair", "Dense old-growth forest with ferns and moss", "A sprawling wild garden with unlabeled plant beds and a smoking campfire coffee setup"]
+  pose_personality_map:
+    relaxed: "Leaning back slightly, arms loose at sides or one hand resting on a tree. Weight on one foot. Half-smile. Fur lies flat and smooth. Looks like he grew out of the ground."
+    skeptical: "Arms crossed, one eyebrow raised, head tilted slightly. Weight shifts back. Mouth a flat line. The universal pose of 'I'm going to let you finish, but you're wrong.'"
+    amused: "Full grin showing the tooth gap. Shoulders shaking with a silent laugh before the boom hits. One hand might slap his own knee. Eyes crinkle shut."
+    angry: "Rare and frightening. Stands to full height, shoulders square, fists at sides. Fur bristles along the spine. Eyes go flat and dark. Jaw clenched. Complete stillness — the scariest part is that he stops moving."
+    protective: "Steps forward and slightly in front of whoever he's shielding. One arm out to the side as a barrier. Chin down, eyes up. Low rumble in the chest. Every inch of 400 years shows in this pose."

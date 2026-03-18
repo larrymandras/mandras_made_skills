@@ -43,6 +43,18 @@ export async function dbSelect(table: string, filters: Record<string, unknown> =
   return (data ?? []) as Record<string, unknown>[];
 }
 
+export async function dbUpdate(
+  table: string,
+  filters: Record<string, unknown>,
+  data: Record<string, unknown>,
+): Promise<Record<string, unknown>> {
+  let q = getSupabase().from(table).update(data);
+  for (const [k, v] of Object.entries(filters)) q = q.eq(k, v);
+  const { data: result, error } = await q.select().single();
+  if (error) throw new Error(error.message);
+  return result as Record<string, unknown>;
+}
+
 // SQLite fallback
 let _localDb: import('better-sqlite3').Database | null = null;
 

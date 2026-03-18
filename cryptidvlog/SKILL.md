@@ -203,6 +203,18 @@ Video stored for analysis. Concept may be re-queued with adjustment notes.
 
 ---
 
+### `/cryptidvlog character <name>`
+
+View a character's full sheet — physical traits, personality, voice, relationships, backstory, and reference image status.
+
+---
+
+### `/cryptidvlog character update <name>`
+
+Bump a character sheet's version number and sync to the database. Use after manually editing a sheet.yaml file.
+
+---
+
 ### `/cryptidvlog cron-setup`
 
 Configure automated daily runs.
