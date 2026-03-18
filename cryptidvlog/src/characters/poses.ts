@@ -11,14 +11,16 @@
 
 /** Every recognised pose tag, in a fixed order. */
 export const CANONICAL_POSES = [
-  'front',            // Full body, facing camera (default reference)
-  'three-quarter',    // 3/4 view, slight turn (most natural angle)
-  'profile',          // Side view (walking/transition scenes)
-  'back',             // Rear view (walking-away shots)
-  'action-running',   // Mid-stride, dynamic pose (chase/escape scenes)
-  'action-talking',   // Gesturing, mouth open (dialogue scenes)
-  'close-up-face',    // Head and shoulders only (reaction shots)
-  'environment',      // Character in typical setting (establishing shots)
+  'front',              // Full body, facing camera (default reference)
+  'three-quarter',      // 3/4 view, slight turn (most natural angle)
+  'profile',            // Side view (walking/transition scenes)
+  'back',               // Rear view (walking-away shots)
+  'action-running',     // Mid-stride, dynamic pose (chase/escape scenes)
+  'action-talking',     // Gesturing, mouth open (dialogue scenes)
+  'close-up-face',      // Head and shoulders only (reaction shots)
+  'environment',        // Character in typical setting (establishing shots)
+  'action-standing',    // Casual standing/turning pose (idle scenes)
+  'emotion-expressive', // Exaggerated reaction — surprise, fear, excitement (comedy beats)
 ] as const;
 
 /** A union of every canonical pose string. */
@@ -40,7 +42,9 @@ export const POSE_FALLBACK_ORDER: Record<PoseTag, PoseTag[]> = {
   'action-running': ['action-talking', 'three-quarter', 'front'],
   'action-talking': ['action-running', 'three-quarter', 'front'],
   'close-up-face':  ['front', 'three-quarter'],
-  'environment':    ['three-quarter', 'front'],
+  'environment':      ['three-quarter', 'front'],
+  'action-standing':    ['three-quarter', 'front', 'action-talking'],
+  'emotion-expressive': ['close-up-face', 'front', 'action-talking'],
 };
 
 // ---------------------------------------------------------------------------

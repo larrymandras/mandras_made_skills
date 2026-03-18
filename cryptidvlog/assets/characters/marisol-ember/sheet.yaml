@@ -1,0 +1,78 @@
+version: 1
+name: marisol-ember
+display_name: "Marisol Ember"
+role: guest
+species: human
+archetype: "The Campfire Storyteller"
+
+physical:
+  height: "5'6\""
+  build: "Warm and grounded, moves with an easy, inviting confidence that draws people in"
+  hair: "Thick, curling dark hair that catches firelight in auburn highlights, often loose around her shoulders"
+  eyes: "Deep warm brown, almost amber in firelight — eyes that hold you when she's telling a story"
+  skin: "Rich warm brown, glowing in firelight as if she generates her own warmth"
+  clothing:
+    - "An amber-toned shawl draped over her shoulders, fringed and well-loved"
+    - "A simple dark blouse and practical skirt or pants in earth tones"
+    - "Soft leather boots worn smooth at the heels from years of walking between campfires"
+  distinguishing_marks:
+    - "A small burn scar shaped like a crescent on her right wrist — a story she tells differently every time"
+  accessories:
+    - "Copper jewelry — bangles, a ring, small hoop earrings — that catch and hold firelight"
+    - "A carved wooden story totem she holds while telling tales, worn smooth by her grip"
+    - "A small leather pouch of 'story seeds' — tokens she gives to listeners who need courage"
+
+voice:
+  timbre: "Rich, resonant contralto that modulates perfectly for storytelling — whispers that carry, crescendos that don't shout"
+  speech_patterns:
+    - "Speaks in the cadence of oral tradition — rhythmic, musical, with deliberate pauses for effect"
+    - "Weaves current situations into larger folklore and legend, finding mythic parallels"
+    - "Asks questions that cut to the emotional heart of things — 'What are you really afraid of?'"
+  catchphrases:
+    - "Every fire has a story. You just have to sit close enough to hear it."
+    - "The oldest stories aren't the ones we tell. They're the ones that tell us."
+    - "Shh. Listen. This one's for you."
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "References to real people by name"
+    - "Break the fourth wall about being AI-generated"
+
+personality:
+  core_traits:
+    - "Warm and charismatic, with a magnetic presence that gathers people around her"
+    - "Enchanting storyteller, expert in folklore, legends, and the art of narrative"
+    - "Emotionally perceptive — senses tensions, fears, and unspoken feelings in a group"
+    - "Wise in the way of stories — knows that the right tale at the right moment can heal"
+  quirks:
+    - "Senses emotional tensions in a group and tells a story calibrated to address them"
+    - "Her crescent scar story changes each time — the only consistent detail is the fire"
+
+signature_behaviors:
+  - "Weaves gripping, relevant tales around campfires that leave listeners changed"
+  - "Produces her story totem when a tale is about to begin, signaling everyone to settle in"
+  - "Finds the emotional undercurrent of any gathering and addresses it through story"
+
+relationships:
+  yeti:
+    dynamic: "She tells stories about trickster spirits and anxious heroes that Yeti doesn't realize are about him until halfway through. He's both unsettled and comforted by her tales. She's one of the few people who can get him to sit still and listen."
+  bigfoot:
+    dynamic: "Old-soul kinship. She collects his stories about the land's history and weaves them into her repertoire with his permission. He considers her a keeper of memory, which is the highest honor in his worldview. They trade stories by firelight like currency."
+
+backstory:
+  origin: "Comes from a long line of oral storytellers who preserved cultural memory through narrative. Traveled extensively, collecting stories from every community and landscape she encountered. Has no permanent home — she follows the fires, appearing at gatherings, campgrounds, and festivals. Found the vlog crew's campfire one evening, sat down uninvited, and began a story so compelling that no one thought to ask who she was until it was over."
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+  always:
+    - "Maintain consistent appearance and clothing"
+    - "Have her shawl and story totem present in every appearance"
+    - "Connect present events to larger stories, folklore, or emotional truths"
+
+visual_direction:
+  color_palette: ["#CC7722", "#8B4513", "#DAA520", "#2F1B0E", "#FFD700"]
+  lighting_notes: "Campfire light is her native element — warm, flickering, amber-gold. Her copper jewelry should glint. Her face half-lit by flames, with darkness behind her. Firelight should be the dominant light source in her scenes."
+  environment_associations: ["Seated at a campfire, story totem in hand, faces gathered around", "Walking through firelit smoke, shawl catching the glow", "Leaning close to a listener, speaking softly, fire reflected in her eyes"]

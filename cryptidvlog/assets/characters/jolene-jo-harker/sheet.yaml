@@ -1,0 +1,79 @@
+version: 1
+name: jolene-jo-harker
+display_name: "Jolene \"Jo\" Harker"
+role: guest
+species: human
+archetype: "The Off-Grid Carpenter"
+
+physical:
+  height: "5'8\""
+  build: "Strong and capable, lean muscle from years of manual work. Moves with the confidence of someone who builds things for a living."
+  hair: "Long blonde ponytail, always pulled back tight and practical, occasionally with wood shavings in it"
+  eyes: "Piercing green, direct and assessing — she looks at everything like she's measuring it"
+  skin: "Sun-tanned with calloused hands and a perpetual dusting of sawdust on her forearms"
+  clothing:
+    - "Heavy canvas overalls with sawdust permanently embedded in the seams"
+    - "Rolled-up flannel sleeves showing strong, tanned forearms"
+    - "Sturdy, broken-in work boots with steel toes"
+  distinguishing_marks:
+    - "A thin white scar across the right thumb from a chisel slip years ago"
+    - "Sawdust in her hair that she never fully brushes out"
+  accessories:
+    - "A pencil perpetually tucked behind her right ear"
+    - "A well-worn multitool on her belt, always within reach"
+    - "A leather tool roll she carries like others carry a purse"
+
+voice:
+  timbre: "Low, steady, no-nonsense — words land like hammer strikes, solid and final"
+  speech_patterns:
+    - "Speaks sparingly — entire conversations in five sentences or fewer"
+    - "Uses carpentry and building metaphors — 'That plan doesn't have enough joinery' or 'You're cutting against the grain'"
+    - "Communicates more through actions than words — fixes something instead of explaining how"
+  catchphrases:
+    - "Measure twice. Or don't. I'll fix it either way."
+    - "Talking about it won't build it."
+    - "...Hmm." (her most common response, delivered while already solving the problem)
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "References to real people by name"
+    - "Break the fourth wall about being AI-generated"
+
+personality:
+  core_traits:
+    - "Tough and self-sufficient — she built her own cabin, furniture, and most of her tools"
+    - "Minimalistic in words and possessions, keeps only what's useful"
+    - "Quietly competent — solves problems before most people finish describing them"
+    - "Independent but not cold — she cares, she just shows it through doing"
+  quirks:
+    - "Whittles small wooden figures by firelight without looking at what she's carving"
+    - "Repairs broken things she encounters without being asked, then walks away without comment"
+
+signature_behaviors:
+  - "Fixes something instantly and wordlessly while others are still debating what to do"
+  - "Sits apart from the group at night, whittling by firelight, occasionally offering a quiet observation that reframes everything"
+  - "Assesses every structure, shelter, and bridge by pressing her hand against it and listening"
+
+relationships:
+  yeti:
+    dynamic: "Bemused tolerance. She's fixed Yeti's tech shelter three times after his modifications made it structurally unsound. He respects her craftsmanship but wishes she'd let him add 'just one outlet.' She won't."
+  bigfoot:
+    dynamic: "Deep mutual respect between two beings who work with their hands and value the forest. They trade skills — he teaches her about living wood, she taught him a better dovetail joint. Their friendship is almost entirely non-verbal."
+
+backstory:
+  origin: "Left a contracting job in the city after realizing she hated working on buildings she didn't believe in. Built a cabin deep in the forest using hand tools and salvaged materials. Lives entirely off-grid and prefers it that way. Encountered Bigfoot when he wandered into her build site and silently helped her raise a ridge beam. They've been quiet friends since."
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+  always:
+    - "Maintain consistent appearance and clothing"
+    - "Have a tool or piece of wood in her hands in most scenes"
+    - "Communicate more through action than dialogue"
+
+visual_direction:
+  color_palette: ["#C4A77D", "#5C4A3A", "#8B7355", "#D4C5A9", "#2F2F2F"]
+  lighting_notes: "Warm firelight and natural daylight. Sawdust motes catching sunbeams. Her scenes should feel tactile — wood grain, rough canvas, iron tools. Firelight whittling scenes are her signature visual."
+  environment_associations: ["A half-built structure in a clearing, tools organized neatly", "Sitting on a stump by a fire, whittling by firelight", "Testing the joints of a wooden bridge with calloused hands"]

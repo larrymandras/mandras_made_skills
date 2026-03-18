@@ -20,6 +20,7 @@
     "takedown": "tsx scripts/emergency-takedown.ts",
     "ip-check": "tsx scripts/ip-check.ts",
     "register-refs": "tsx scripts/register-references.ts",
+    "split-sheet": "tsx scripts/split-sprite-sheet.ts",
     "lint": "eslint src tests --ext .ts",
     "typecheck": "tsc --noEmit"
   },

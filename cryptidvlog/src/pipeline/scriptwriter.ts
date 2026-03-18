@@ -44,8 +44,13 @@ function resolveCharacters(focus: Concept['characterFocus']): string[] {
 function buildSystemPrompt(
   sheetSummaries: string[],
   visualDirections: string[],
+  guestSummary?: string,
 ): string {
   const posesListStr = CANONICAL_POSES.map((p) => `  - "${p}"`).join('\n');
+
+  const guestBlock = guestSummary
+    ? `\n\n---\n\n## Guest Character\n${guestSummary}\n\n### Guest Appearance Guidelines\n- The guest should appear in 2-3 scenes out of the total, NOT every scene.\n- Write the guest's dialogue to match their speech patterns and personality.\n- Show how the guest interacts with and plays off the lead characters.\n- The guest adds flavor but the leads remain the stars of the episode.`
+    : '';
 
   return `You are a comedy scriptwriter for a short-form cryptid vlog series.
 You write scene-by-scene scripts for vertical video content (TikTok/YouTube Shorts).
@@ -54,7 +59,7 @@ ${sheetSummaries.join('\n\n---\n\n')}
 
 ---
 
-${visualDirections.join('\n\n---\n\n')}
+${visualDirections.join('\n\n---\n\n')}${guestBlock}
 
 ---
 
@@ -168,8 +173,23 @@ export async function writeScript(concept: Concept): Promise<SceneScript[]> {
     }),
   );
 
+  // 2b. Load guest character sheet if one is cast
+  let guestSummary: string | undefined;
+  if (concept.guestCharacter) {
+    try {
+      await loadSheet(concept.guestCharacter);
+      guestSummary = await getSheetSummaryForPrompt(concept.guestCharacter);
+      logger.info('Scriptwriter: loaded guest character sheet', { guest: concept.guestCharacter });
+    } catch (err) {
+      logger.warn('Scriptwriter: failed to load guest sheet, continuing without guest', {
+        guest: concept.guestCharacter,
+        error: (err as Error).message,
+      });
+    }
+  }
+
   // 3. Build prompts
-  const systemPrompt = buildSystemPrompt(sheetSummaries, visualDirections);
+  const systemPrompt = buildSystemPrompt(sheetSummaries, visualDirections, guestSummary);
   const userPrompt = buildUserPrompt(concept);
   const fullPrompt = `${systemPrompt}\n\n---\n\n${userPrompt}`;
 

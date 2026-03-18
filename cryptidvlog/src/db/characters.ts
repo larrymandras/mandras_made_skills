@@ -10,6 +10,29 @@ export async function getCharacter(name: string): Promise<Record<string, unknown
   return rows[0] ?? null;
 }
 
+/** Returns all characters with role='lead'. */
+export async function getLeadCharacters(): Promise<Record<string, unknown>[]> {
+  return dbSelect('characters', { role: 'lead' });
+}
+
+/** Returns all characters with role='guest'. */
+export async function getGuestCharacters(): Promise<Record<string, unknown>[]> {
+  return dbSelect('characters', { role: 'guest' });
+}
+
+/** Returns a random guest character, or null if none exist. */
+export async function getRandomGuest(): Promise<Record<string, unknown> | null> {
+  const guests = await getGuestCharacters();
+  if (guests.length === 0) return null;
+  return guests[Math.floor(Math.random() * guests.length)]!;
+}
+
+/** Returns all character names (for validation). */
+export async function getAllCharacterNames(): Promise<string[]> {
+  const rows = await dbSelect('characters');
+  return rows.map((r) => r['name'] as string);
+}
+
 export async function saveConsistencyScore(params: {
   sceneId: string;
   characterName: string;

@@ -1,0 +1,80 @@
+version: 1
+name: seraphine-vale
+display_name: "Seraphine Vale"
+role: guest
+species: human
+archetype: "The Rogue Falconer"
+
+physical:
+  height: "5'9\""
+  build: "Athletic and poised, carries herself with the controlled stillness of someone trained to work with birds of prey"
+  hair: "Dark, intricately braided and woven close to her head, practical and striking"
+  eyes: "Amber-brown, sharp and steady — a raptor's gaze in a human face"
+  skin: "Deep brown, weathered by wind and altitude"
+  clothing:
+    - "A slate-blue cloak that falls to mid-calf, worn and wind-stained at the edges"
+    - "A fitted dark tunic underneath, practical for movement"
+    - "Sturdy leather boots laced to the knee"
+  distinguishing_marks:
+    - "Fine talon scars on both forearms from years of falconry — she wears them proudly"
+    - "A small hawk-feather scar tattoo behind her right ear"
+  accessories:
+    - "A heavy leather falconry glove on her left hand, worn buttery-soft from use"
+    - "A bird-shaped silver hair clasp securing one braid"
+    - "A hawk or falcon perched on her gloved arm — her constant companion"
+    - "A leather pouch of treats and lures at her belt"
+
+voice:
+  timbre: "Low, steady, and precise — she speaks the way a hawk flies, with no wasted motion"
+  speech_patterns:
+    - "Speaks sparingly, in short declarative sentences — efficiency over eloquence"
+    - "Uses falconry and raptor terminology naturally — 'He's mantling,' 'Watch the footing'"
+    - "Whistles complex commands to her bird mid-conversation without breaking sentence flow"
+  catchphrases:
+    - "The sky sees everything. You just have to ask the right bird."
+    - "Trust is earned in talons and time."
+    - "She flies when she's ready. Not before."
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "References to real people by name"
+    - "Break the fourth wall about being AI-generated"
+
+personality:
+  core_traits:
+    - "Mysterious and self-contained — reveals nothing she doesn't choose to"
+    - "Steady and quietly confident, with a fierce protectiveness toward her birds"
+    - "Deeply bonded with raptors in a way that seems almost supernatural"
+    - "Independent and solitary by nature, but not unfriendly — just selective"
+  quirks:
+    - "Silently appears on ridgelines and high ground, watching from above before approaching"
+    - "Tilts her head like a bird when studying something closely"
+
+signature_behaviors:
+  - "Whistles complex multi-note commands that send her hawk on reconnaissance"
+  - "Appears silently on ridgelines, cloak catching the wind, hawk on arm"
+  - "Reads the forest from above through her bird's behavior — what it avoids tells her where danger is"
+
+relationships:
+  yeti:
+    dynamic: "Her hawk once landed on Yeti's head and he nearly fainted. She found this amusing enough to keep coming back. She provides aerial reconnaissance that feeds Yeti's surveillance network, which she considers a fair trade for his interesting data."
+  bigfoot:
+    dynamic: "Two quiet souls who understand patience and territory. Bigfoot's garden attracts songbirds, which attract raptors, which brought Seraphine into his orbit. They communicate in gestures and silences. He built her a perch near his cabin without being asked."
+
+backstory:
+  origin: "Trained in traditional falconry from childhood by a reclusive mentor in the mountains. Travels between wilderness areas following raptor migration patterns. Has no permanent home — she goes where her birds go. Appeared in the forest following a red-tailed hawk that had been circling Bigfoot's territory for weeks, and decided the hunting here was worth staying for."
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+  always:
+    - "Maintain consistent appearance and clothing"
+    - "Have her falconry glove and a raptor present or nearby"
+    - "Move with deliberate, bird-like stillness and economy"
+
+visual_direction:
+  color_palette: ["#708090", "#5C4A3A", "#8B7355", "#2F3E2F", "#C4A77D"]
+  lighting_notes: "High-altitude light — bright, clear, slightly cold. Wind movement in her cloak and hair. Her scenes should feel elevated and watchful, with wide skies and the silhouette of a bird in flight."
+  environment_associations: ["Standing on a rocky ridgeline, hawk on arm, wind in her cloak", "A high perch overlooking the forest canopy", "Walking through open grassland with a raptor circling overhead"]

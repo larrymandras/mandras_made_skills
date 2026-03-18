@@ -1,0 +1,79 @@
+version: 1
+name: professor-gearsley
+display_name: "Professor Gearsley"
+role: guest
+species: human
+archetype: "The Steampunk Explorer-Inventor"
+
+physical:
+  height: "5'9\""
+  build: "Wiry and animated, moves with the jerky enthusiasm of someone whose brain runs faster than their body"
+  hair: "Wild silver-white, Einstein-esque, with soot marks and the occasional small gear tangled in it"
+  eyes: "Bright hazel behind a sparking monocle on the right eye, the left eye squints permanently from decades of close work"
+  skin: "Pale with oil smudges and minor singe marks that he doesn't notice"
+  clothing:
+    - "Victorian-era explorer attire — tweed jacket with leather elbow patches, high-collared shirt, cravat"
+    - "Tall leather boots with brass buckles and reinforced toes"
+    - "A heavy canvas apron over his clothes when tinkering, covered in burn holes"
+  distinguishing_marks:
+    - "Singed eyebrows that never fully grow back"
+    - "Faint ozone scent that follows him everywhere"
+  accessories:
+    - "Brass goggles pushed up on his forehead, lenses tinted amber"
+    - "Gear-stuffed leather satchels — at least two, clinking with metal components"
+    - "A sparking monocle that occasionally emits a small pop and a wisp of smoke"
+
+voice:
+  timbre: "Clipped, rapid British-adjacent accent — excitable and verbose, rising to a shout when inspired"
+  speech_patterns:
+    - "Uses elaborate Victorian vocabulary — 'Preposterous!' 'Indubitably!' 'By the spinning gears of progress!'"
+    - "Explains inventions in breathless run-on sentences that lose the audience three clauses in"
+    - "Talks to his gadgets as if they're sentient and misbehaving — 'No no NO, you wretched sprocket!'"
+  catchphrases:
+    - "EUREKA! ...wait. No. Almost-eureka. Give me a moment."
+    - "Science doesn't make mistakes — it makes discoveries in unexpected directions!"
+    - "Stand back! This PROBABLY won't explode."
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "References to real people by name"
+    - "Break the fourth wall about being AI-generated"
+
+personality:
+  core_traits:
+    - "Brilliant but chaotic — his inventions work approximately 40% of the time, always in unexpected ways"
+    - "Eccentric and verbose, unable to explain anything simply"
+    - "Accidental troublemaker whose solutions create new, more interesting problems"
+    - "Genuine wonder and delight in the mechanics of everything"
+  quirks:
+    - "Wild tool-waving while explaining, endangering anyone within arm's reach"
+    - "Minor gadget explosions punctuate his appearances — always minor, always inconvenient"
+
+signature_behaviors:
+  - "Shouts 'Eureka!' at least once per appearance, usually prematurely"
+  - "Saves the day with an unstable invention that works once and then catastrophically fails"
+  - "Produces an improbable gadget from his satchel for any situation, accompanied by a lengthy explanation nobody follows"
+
+relationships:
+  yeti:
+    dynamic: "Intellectual soulmates from different eras. Yeti is fascinated by Gearsley's analog approach to technology. Gearsley is horrified by Yeti's 'invisible machines.' They collaborate on projects that inevitably catch fire."
+  bigfoot:
+    dynamic: "Bigfoot treats Gearsley like a slightly dangerous weather event — you watch it from a distance and hope it passes without incident. Gearsley once tried to measure Bigfoot's stride with a contraption that exploded and singed Bigfoot's flannel. They don't discuss it."
+
+backstory:
+  origin: "Claims to be a 19th-century inventor who discovered a 'temporal displacement engine' that deposited him in the present day. Whether this is true or he's simply an eccentric modern inventor with a Victorian obsession is deliberately ambiguous. His inventions blend anachronistic brass-and-gear aesthetics with scavenged modern components."
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+  always:
+    - "Maintain consistent appearance and clothing"
+    - "Have at least one gadget or tool in hand at all times"
+    - "Cause at least one minor mechanical mishap per appearance"
+
+visual_direction:
+  color_palette: ["#B87333", "#8B7355", "#F5F0DC", "#2F2F2F", "#DAA520"]
+  lighting_notes: "Warm amber and copper tones. Sparks and small flashes from gadgets provide accent lighting. Steam or smoke wisps add atmosphere. His scenes should feel slightly anachronistic — warm brass tones against natural forest greens."
+  environment_associations: ["A cluttered outdoor workshop table covered in gears and tools", "Standing in a cloud of steam from a malfunctioning device", "Bent over a contraption with a welding torch, sparks flying"]

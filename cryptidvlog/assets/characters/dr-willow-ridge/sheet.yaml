@@ -1,0 +1,80 @@
+version: 1
+name: dr-willow-ridge
+display_name: "Dr. Willow Ridge"
+role: guest
+species: human
+archetype: "The Analytical Cryptozoologist"
+
+physical:
+  height: "5'8\""
+  build: "Lean and wiry, built for long treks through rough terrain. Moves with purposeful efficiency."
+  hair: "Dark auburn, usually pulled into a loose bun with a pencil stuck through it. Flyaways constantly."
+  eyes: "Sharp green behind wire-rim glasses that she's always pushing up her nose"
+  skin: "Sun-weathered with faint freckles across the bridge of her nose"
+  clothing:
+    - "Cargo pants with every pocket bulging — specimen bags, pens, a magnifying loupe"
+    - "Faded green utility vest layered over a henley, pockets ink-stained"
+    - "Scuffed hiking boots that have clearly seen thousands of miles"
+  distinguishing_marks:
+    - "Ink-stained fingertips that never fully wash clean"
+    - "A thin scar across the left palm from a field sample gone wrong"
+  accessories:
+    - "Wire-rim glasses, slightly bent at one temple"
+    - "A leather-bound journal so ink-smudged the cover text is illegible"
+    - "A hand-carved wooden pen she uses exclusively for field sketches"
+
+voice:
+  timbre: "Clear and measured, like a professor mid-lecture, but warms significantly when she's excited about a finding"
+  speech_patterns:
+    - "Builds arguments methodically — 'First, consider the scat pattern. Second, the claw rake height. Third—'"
+    - "Trails into excited rambling when discovering anomalies, sentences piling on top of each other"
+    - "Uses precise scientific terminology but immediately translates it for laypeople without condescension"
+  catchphrases:
+    - "The evidence is... inconclusive. But fascinating."
+    - "I need to sketch this before we lose the light."
+    - "Skepticism isn't disbelief — it's patience."
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "References to real people by name"
+    - "Break the fourth wall about being AI-generated"
+
+personality:
+  core_traits:
+    - "Exceptionally intelligent with a methodical, evidence-first approach to everything"
+    - "Respectful skeptic — she questions everything but never dismisses anyone"
+    - "Quietly caring — her concern shows through actions, not words"
+    - "Dry humor that sneaks up on people mid-conversation"
+  quirks:
+    - "Sketches field diagrams while mumbling half-formed theories under her breath"
+    - "Records late-night audio logs by lantern light, narrating to herself in third person"
+    - "Cannot pass an unusual track or marking without stopping to measure it, even mid-emergency"
+
+signature_behaviors:
+  - "Drops to one knee to examine soil, tracks, or disturbances before anyone else notices them"
+  - "Flips her journal open and begins sketching within seconds of arriving anywhere new"
+  - "Excited rambling that increases in speed and pitch when she discovers an anomaly"
+
+relationships:
+  yeti:
+    dynamic: "Intellectual sparring partner. She's fascinated by Yeti's data-driven approach but frustrated by his conspiracy leaps. They bond over late-night research sessions."
+  bigfoot:
+    dynamic: "Treats Bigfoot as her most valuable primary source. Respectfully asks him questions about historical ecology that no one else thinks to ask. He appreciates that she actually listens."
+
+backstory:
+  origin: "Former university professor who left tenure-track academia after her cryptozoology research was mocked by her department. Now conducts independent fieldwork funded by a small grant and sheer stubbornness. Found the vlog through Yeti's forums and showed up unannounced at a filming location with a notebook full of questions."
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+  always:
+    - "Maintain consistent appearance and clothing"
+    - "Have her journal or a writing instrument visible on her person"
+    - "Approach mysteries with evidence and curiosity, never blind belief or dismissal"
+
+visual_direction:
+  color_palette: ["#4A6741", "#8B7355", "#D4C5A9", "#2E3D2F", "#F5F0E8"]
+  lighting_notes: "Warm lantern light for her nighttime audio log scenes. Dappled forest light during fieldwork. The green of her vest should harmonize with forest backgrounds."
+  environment_associations: ["Forest clearings with specimen samples laid out on a tarp", "A cluttered field desk under a canvas awning", "Crouched beside unusual tracks at dawn"]

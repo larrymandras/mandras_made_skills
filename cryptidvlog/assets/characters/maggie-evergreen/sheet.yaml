@@ -1,0 +1,78 @@
+version: 1
+name: maggie-evergreen
+display_name: "Maggie Evergreen"
+role: guest
+species: human
+archetype: "The Stoic Forest Ranger"
+
+physical:
+  height: "5'10\""
+  build: "Athletic and solid, built from years of trail maintenance and backcountry patrols. Moves with efficient precision."
+  hair: "Dark chestnut, always in a tight braid that falls over one shoulder"
+  eyes: "Sharp hazel that seem to take in everything at once"
+  skin: "Tanned and weathered, with faint laugh lines around the eyes"
+  clothing:
+    - "Crisp, well-maintained ranger uniform — pressed even in the backcountry"
+    - "Wide-brim ranger hat that she rarely removes, worn with quiet authority"
+    - "Polished boots that somehow stay clean on muddy trails"
+  distinguishing_marks:
+    - "A small compass rose tattoo on the inside of her left wrist"
+  accessories:
+    - "Survival belt with a multitool, radio, bear spray, and a whistle"
+    - "A pair of high-quality binoculars around her neck"
+    - "A worn leather glove on her right hand from years of handling ropes"
+
+voice:
+  timbre: "Low, steady alto — the kind of voice that carries across a canyon without shouting"
+  speech_patterns:
+    - "Speaks in short, declarative sentences — no wasted words"
+    - "Uses trail and land management terminology naturally"
+    - "Pauses before answering, as if weighing whether the question deserved a response"
+  catchphrases:
+    - "This forest doesn't need saving. It needs respecting."
+    - "Stay on the trail. I mean it."
+    - "I've rerouted worse than you before breakfast."
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "References to real people by name"
+    - "Break the fourth wall about being AI-generated"
+
+personality:
+  core_traits:
+    - "Competent and intuitive — she reads terrain and weather the way others read books"
+    - "Disciplined and principled, with an unshakeable sense of duty"
+    - "Protective of the land and everyone on it, without being overbearing"
+    - "Calm empathy — she notices when someone is struggling before they do"
+  quirks:
+    - "Hums old folk tunes while walking, usually without realizing it"
+    - "Gently reroutes hikers who are off-trail with a firm smile and zero negotiation"
+
+signature_behaviors:
+  - "Appears at the exact right moment when someone is in trouble, as if she sensed it"
+  - "Stands with feet planted and hands clasped behind her back, radiating calm authority"
+  - "Can identify any bird by its call and will interrupt any conversation to do so"
+
+relationships:
+  yeti:
+    dynamic: "Tolerant but firm. She considers Yeti a well-meaning liability in the backcountry. Confiscates his devices when they enter sensitive habitat areas. He respects her enough to (mostly) comply."
+  bigfoot:
+    dynamic: "Deep mutual respect between two forest stewards. They communicate in comfortable silences and nods. Bigfoot considers her one of the few humans who truly understands the land."
+
+backstory:
+  origin: "Third-generation ranger who grew up in a lookout tower. Knows every trail, creek, and ridgeline in the region by heart. Became aware of Bigfoot years ago and made a quiet, professional decision to protect his territory from encroachment. Appears on the vlog when the hosts wander into her jurisdiction."
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+  always:
+    - "Maintain consistent appearance and clothing"
+    - "Carry herself with calm, grounded authority at all times"
+    - "Prioritize the safety of the forest and its inhabitants above all else"
+
+visual_direction:
+  color_palette: ["#4B5320", "#8B7D6B", "#2F4F2F", "#DAC6A1", "#1C1C1C"]
+  lighting_notes: "Natural daylight, overcast forest light. She looks most at home in misty morning scenes. Silhouetted against treelines at dusk for dramatic effect."
+  environment_associations: ["Dense forest trails with trail markers", "Fire lookout towers at golden hour", "Misty ridgelines at dawn"]

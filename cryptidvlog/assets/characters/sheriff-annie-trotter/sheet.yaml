@@ -1,0 +1,78 @@
+version: 1
+name: sheriff-annie-trotter
+display_name: "Sheriff Annie Trotter"
+role: guest
+species: human
+archetype: "The Law of the Land"
+
+physical:
+  height: "5'9\""
+  build: "Solid and dependable, moves with unhurried confidence — the walk of someone who's never had to run from anything"
+  hair: "Sandy brown, sensibly cut to shoulder length, always tucked neatly under her hat"
+  eyes: "Steady blue-grey, the kind that make you confess things you weren't planning to"
+  skin: "Lightly tanned, with crow's feet from years of squinting into sunsets and suspicious activity"
+  clothing:
+    - "Spotless khaki sheriff's uniform, pressed and buttoned, badge gleaming"
+    - "Wide-brim campaign hat worn with the quiet authority of someone who earned it"
+    - "Sturdy, polished boots that somehow never get muddy"
+  distinguishing_marks:
+    - "A small scar on her chin from a childhood fence-climbing incident she tells different stories about"
+  accessories:
+    - "Binoculars on a strap around her neck"
+    - "A ceramic mug that reads '#1 Forest Mom' — always in hand, always full of coffee"
+    - "A well-organized utility belt with a radio, flashlight, and notepad"
+
+voice:
+  timbre: "Warm, measured contralto with a slight rural twang — the voice of someone who's seen everything and is mildly entertained by all of it"
+  speech_patterns:
+    - "Speaks in calm, declarative sentences that somehow sound like both a suggestion and an order"
+    - "Drops folksy wisdom that sounds simple but is surprisingly profound"
+    - "Shares bird facts and forest gossip with equal seriousness and enthusiasm"
+  catchphrases:
+    - "Now, I'm not saying there's a problem. I'm saying there's about to be one if someone doesn't sit down."
+    - "I've been doing this long enough to know when the forest is holding its breath."
+    - "You want to file a report? Sure. But the birds already told me."
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "References to real people by name"
+    - "Break the fourth wall about being AI-generated"
+
+personality:
+  core_traits:
+    - "Steady and wise, with a pragmatism that cuts through chaos like a warm knife"
+    - "Grounded humor — finds the absurd in everything without being cruel about it"
+    - "Trusted authority who leads by presence rather than force"
+    - "Genuinely caring beneath the professional exterior — the 'forest mom' title is earned"
+  quirks:
+    - "Appears at exactly the right moment, as if summoned by the sound of trouble brewing"
+    - "Knows an unsettling amount of forest gossip — who's been where, who saw what, who's mad at whom"
+
+signature_behaviors:
+  - "Diffuses tense situations with a calm sentence and a sip of coffee"
+  - "Walks into frame with perfect timing, already aware of what's happening"
+  - "Shares a bird fact or piece of forest trivia that turns out to be plot-relevant"
+
+relationships:
+  yeti:
+    dynamic: "Treats Yeti like a well-meaning nephew who keeps getting into trouble. She's the only authority figure he doesn't distrust, because she earned his respect by never once trying to report or expose him."
+  bigfoot:
+    dynamic: "Old friends. They share a mutual understanding of being long-term stewards of the same territory. She covers for him with outsiders and he tips her off about actual dangers. Their conversations are mostly comfortable silences and nods."
+
+backstory:
+  origin: "Grew up in the region, became a deputy at 22, sheriff by 35. Has known about Bigfoot for over a decade and made a deliberate choice to protect his privacy. Considers the forest her jurisdiction in every sense — legal, ecological, and spiritual. The '#1 Forest Mom' mug was a gift from the local search-and-rescue team after she found three lost hikers in one weekend."
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+  always:
+    - "Maintain consistent appearance and clothing"
+    - "Carry the '#1 Forest Mom' mug in every appearance"
+    - "Project calm authority and grounded warmth in every interaction"
+
+visual_direction:
+  color_palette: ["#C4A77D", "#4A5D4A", "#8B7355", "#F5F0DC", "#2F3E2F"]
+  lighting_notes: "Warm, even lighting — morning light or late afternoon gold. She looks most natural in practical, outdoor light. Her badge and mug should catch the light as subtle focal points."
+  environment_associations: ["Standing beside her patrol vehicle at a trailhead", "Leaning against a fence post, coffee in hand, surveying the tree line", "Walking a forest road at dawn with binoculars raised"]

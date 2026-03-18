@@ -64,8 +64,8 @@ const PersonalitySchema = z.object({
 
 const RelationshipEntrySchema = z.object({
   dynamic: z.string(),
-  tension_source: z.string(),
-  running_jokes: z.array(z.string()),
+  tension_source: z.string().optional(),
+  running_jokes: z.array(z.string()).optional(),
 }).catchall(z.string());
 
 const RelationshipsSchema = z.record(z.string(), RelationshipEntrySchema);
@@ -73,7 +73,7 @@ const RelationshipsSchema = z.record(z.string(), RelationshipEntrySchema);
 const BackstorySchema = z.object({
   origin: z.string(),
   arc: z.string(),
-  secrets: z.array(z.string()),
+  secrets: z.array(z.string()).optional(),
 });
 
 const ConstraintsSchema = z.object({
@@ -93,6 +93,10 @@ export const CharacterSheetSchema = z.object({
   version: z.number().int().positive(),
   name: z.string(),
   species: z.string(),
+  role: z.enum(['lead', 'guest']).optional().default('lead'),
+  display_name: z.string().optional(),
+  archetype: z.string().optional(),
+  signature_behaviors: z.array(z.string()).optional(),
   physical: PhysicalSchema,
   voice: VoiceSchema,
   personality: PersonalitySchema,
@@ -207,8 +211,11 @@ export async function getSheetSummaryForPrompt(name: string): Promise<string> {
   const s = await loadSheet(name);
   const lines: string[] = [];
 
-  lines.push(`# ${s.name} — Character Sheet`);
+  const displayLabel = s.display_name ?? s.name;
+  lines.push(`# ${displayLabel} — Character Sheet`);
   lines.push(`Species: ${s.species}`);
+  if (s.role === 'guest') lines.push(`Role: Guest Character`);
+  if (s.archetype) lines.push(`Archetype: ${s.archetype}`);
   lines.push('');
 
   // Physical
@@ -252,6 +259,13 @@ export async function getSheetSummaryForPrompt(name: string): Promise<string> {
   for (const q of s.personality.quirks) lines.push(`  - ${q}`);
   lines.push('');
 
+  // Signature behaviors (guest characters)
+  if (s.signature_behaviors && s.signature_behaviors.length > 0) {
+    lines.push('## Signature Behaviors');
+    for (const b of s.signature_behaviors) lines.push(`  - ${b}`);
+    lines.push('');
+  }
+
   // Relationships
   lines.push('## Relationships');
   for (const [partner, rel] of Object.entries(s.relationships)) {
@@ -262,9 +276,11 @@ export async function getSheetSummaryForPrompt(name: string): Promise<string> {
       if (['dynamic', 'tension_source', 'running_jokes'].includes(key)) continue;
       lines.push(`${key.replace(/_/g, ' ')}: ${val}`);
     }
-    lines.push(`Tension source: ${rel.tension_source}`);
-    lines.push('Running jokes:');
-    for (const j of rel.running_jokes) lines.push(`  - ${j}`);
+    if (rel.tension_source) lines.push(`Tension source: ${rel.tension_source}`);
+    if (rel.running_jokes && rel.running_jokes.length > 0) {
+      lines.push('Running jokes:');
+      for (const j of rel.running_jokes) lines.push(`  - ${j}`);
+    }
   }
   lines.push('');
 
@@ -272,8 +288,10 @@ export async function getSheetSummaryForPrompt(name: string): Promise<string> {
   lines.push('## Backstory');
   lines.push(`Origin: ${s.backstory.origin}`);
   lines.push(`Arc: ${s.backstory.arc}`);
-  lines.push('Secrets:');
-  for (const sec of s.backstory.secrets) lines.push(`  - ${sec}`);
+  if (s.backstory.secrets && s.backstory.secrets.length > 0) {
+    lines.push('Secrets:');
+    for (const sec of s.backstory.secrets) lines.push(`  - ${sec}`);
+  }
   lines.push('');
 
   // Constraints

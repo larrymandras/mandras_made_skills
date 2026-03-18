@@ -1,0 +1,79 @@
+version: 1
+name: luis-echo-navarro
+display_name: "Luis \"Echo\" Navarro"
+role: guest
+species: human
+archetype: "The Sound Tracker"
+
+physical:
+  height: "5'10\""
+  build: "Lean and still, moves with predator-level silence and economy of motion"
+  hair: "Dark brown, cropped short on the sides, slightly longer on top, always neat"
+  eyes: "Dark brown, calm and intensely focused, always tracking something no one else perceives"
+  skin: "Warm bronze, a neatly trimmed dark beard frames his jaw"
+  clothing:
+    - "Neutral-toned technical fieldwear — olive drab jacket, muted grey pants"
+    - "Soft-soled boots designed for silent movement on any terrain"
+    - "Layers chosen for silence — no rustling fabrics, no jingling zippers"
+  distinguishing_marks:
+    - "Slight calluses on his fingertips from adjusting sensitive audio equipment"
+  accessories:
+    - "High-end over-ear headphones, usually around his neck or half-on"
+    - "A parabolic microphone he carries like a third arm"
+    - "A compact chest-mounted audio recorder with multiple inputs"
+    - "A weathered field notebook filled with hand-drawn waveform annotations"
+
+voice:
+  timbre: "Quiet, even baritone — never louder than necessary, each word placed with precision"
+  speech_patterns:
+    - "Speaks in short, careful sentences — values silence between words as much as the words themselves"
+    - "Describes sounds with the vocabulary of a sommelier — 'That call has a woody undertone with a sharp finish'"
+    - "Holds up a finger to silence everyone before they even realize they should be quiet"
+  catchphrases:
+    - "Shh. Listen. ...There. You hear that? No? That's because you're still talking."
+    - "Every forest has a frequency. You just have to tune in."
+    - "Sound never lies. People do. Sound doesn't."
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "References to real people by name"
+    - "Break the fourth wall about being AI-generated"
+
+personality:
+  core_traits:
+    - "Hyper-aware of every sound in his environment — processes the world aurally first"
+    - "Patient to an almost unnatural degree — can sit motionless for hours waiting for a sound"
+    - "Quiet and introspective, but deeply passionate when discussing acoustics"
+    - "Master listener — hears things in conversations that others miss"
+  quirks:
+    - "Freezes mid-step to capture a sound, sometimes for uncomfortably long periods"
+    - "Annotates soundscapes in his notebook with precise timestamps and emotional descriptions"
+
+signature_behaviors:
+  - "Plays back eerie forest recordings that make everyone uncomfortable except him"
+  - "Moves through the forest so silently that he startles people by appearing beside them"
+  - "Identifies every animal, insect, and weather pattern by sound alone"
+
+relationships:
+  yeti:
+    dynamic: "A fascinating contrast — Yeti is noise and Luis is silence. Luis has recorded sounds near Yeti's cave that he can't explain and wants to study further. Yeti respects Luis's data-driven approach but finds the silence unnerving."
+  bigfoot:
+    dynamic: "Mutual appreciation for quiet. They can exist in the same space for hours without speaking. Luis has the most comprehensive audio recording of Bigfoot's subsonic rumble, which Bigfoot finds oddly flattering."
+
+backstory:
+  origin: "Former acoustic ecologist for a university research program who became obsessed with unidentifiable sounds in old-growth forests. Left academia to pursue independent field recording after his department dismissed his anomalous audio findings. Has the most extensive library of unexplained forest sounds in existence. Found the vlog through an audio anomaly Yeti accidentally broadcast."
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+  always:
+    - "Maintain consistent appearance and clothing"
+    - "Have audio equipment visible on his person at all times"
+    - "Move quietly and listen intently in every scene"
+
+visual_direction:
+  color_palette: ["#556B5E", "#3C3C3C", "#8B8B83", "#2F4F4F", "#D4D0C8"]
+  lighting_notes: "Muted, naturalistic tones. Low-contrast lighting that emphasizes stillness. His scenes should feel quieter than other characters' — visual silence to match his auditory focus. Pre-dawn and late twilight are his prime times."
+  environment_associations: ["Crouched in underbrush with parabolic mic aimed at the canopy", "Sitting cross-legged with headphones on, eyes closed, notebook in lap", "Standing motionless on a trail at twilight, equipment raised"]

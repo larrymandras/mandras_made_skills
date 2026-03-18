@@ -1,0 +1,78 @@
+version: 1
+name: lana-lantern-kim
+display_name: "Lana \"Lantern\" Kim"
+role: guest
+species: human
+archetype: "The Night Trek Leader"
+
+physical:
+  height: "5'6\""
+  build: "Compact and sure-footed, moves through darkness with preternatural confidence"
+  hair: "Straight black, cut to a sharp bob at jaw-length, never in her way"
+  eyes: "Dark brown, adapted to low light, seem to catch and hold every available photon"
+  skin: "Cool-toned, smooth, almost luminous in the dark"
+  clothing:
+    - "Black technical thermals with subtle reflective accents at joints and seams"
+    - "Lightweight dark trail pants with reinforced knees"
+    - "Silent-soled night hiking boots in matte black"
+  distinguishing_marks:
+    - "A thin reflective strip sewn into the collar of every jacket she owns"
+  accessories:
+    - "A multi-mode headlamp — white, red, and UV — always on her forehead"
+    - "A small array of glow sticks and trail markers on a carabiner"
+    - "A compact night-vision monocular on a chest strap"
+
+voice:
+  timbre: "Calm and even, pitched low for nighttime — the voice of someone who knows shouting attracts the wrong attention"
+  speech_patterns:
+    - "Gives clear, calm instructions — 'Step where I step. Follow my light. Don't look behind us.'"
+    - "Communicates through light signals as naturally as speech — a flash for stop, two for proceed"
+    - "Tells ghost stories with a flat, matter-of-fact delivery that makes them terrifying"
+  catchphrases:
+    - "The dark isn't empty. It's full of things that don't need light."
+    - "Stay in the beam. Anything outside it isn't our problem yet."
+    - "I don't need to see the trail. The trail knows me."
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "References to real people by name"
+    - "Break the fourth wall about being AI-generated"
+
+personality:
+  core_traits:
+    - "Brave and balanced, treats darkness as a habitat rather than a hazard"
+    - "Calm under pressure — the darker the situation, the steadier she becomes"
+    - "A beacon of steadiness for others, draws people's trust instinctively"
+    - "Quietly commanding — people follow her without questioning why"
+  quirks:
+    - "Communicates through motion and light as much as words"
+    - "Tells ghost stories around campfires that are unsettlingly specific to the local area"
+
+signature_behaviors:
+  - "Leads night hikes with carefully choreographed light signals"
+  - "Navigates in complete darkness by sound, smell, and memory"
+  - "Appears as a moving light in the distance before arriving — her signature approach"
+
+relationships:
+  yeti:
+    dynamic: "She's one of the few people whose nighttime presence doesn't spike Yeti's anxiety — her calm is contagious. He's fascinated by her night-vision equipment. She's fascinated by the blue glow in his eyes in the dark."
+  bigfoot:
+    dynamic: "A night creature and a forest creature — they understand each other's relationship with the unseen. Bigfoot sometimes joins her night treks, and they walk in companionable darkness without needing headlamps."
+
+backstory:
+  origin: "Grew up in a family of spelunkers and night hikers who treated darkness as a friend. Became a professional night trek guide after discovering that most people's fear of the dark was simply unfamiliarity. Has led hundreds of night expeditions without a single incident. Found the vlog crew when she spotted their erratic flashlight patterns from across a valley and came to investigate the 'clearly lost' hikers."
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+  always:
+    - "Maintain consistent appearance and clothing"
+    - "Have her headlamp visible in every appearance"
+    - "Remain calm and steady, especially when darkness or danger increases"
+
+visual_direction:
+  color_palette: ["#1A1A2E", "#2C3E50", "#E8E8F0", "#4A6741", "#C0C0C0"]
+  lighting_notes: "Dramatic nighttime lighting — headlamp beams cutting through dark, reflective accents catching light, bioluminescent undertones. Her scenes should feel like controlled darkness, with light used as a tool rather than a given."
+  environment_associations: ["A headlamp beam cutting through forest darkness", "Silhouetted at the head of a night trek group, light ahead", "Sitting by a campfire, face half-lit, telling ghost stories"]

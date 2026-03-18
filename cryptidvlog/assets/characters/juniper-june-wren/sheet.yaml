@@ -1,0 +1,79 @@
+version: 1
+name: juniper-june-wren
+display_name: "Juniper \"June\" Wren"
+role: guest
+species: human
+archetype: "The Wilderness Forager"
+
+physical:
+  height: "5'4\""
+  build: "Small and nimble, built for crouching, climbing, and squeezing between bushes"
+  hair: "Chestnut curls that bounce when she walks, often adorned with leaves she hasn't noticed yet"
+  eyes: "Bright hazel-green, always darting toward the ground, scanning for edible plants"
+  skin: "Warm peach with a constellation of freckles across her nose and cheeks"
+  clothing:
+    - "A moss-green tunic belted at the waist, practical and soft-looking"
+    - "Earth-toned leggings and soft leather ankle boots"
+    - "A light linen apron with deep pockets for collecting samples"
+  distinguishing_marks:
+    - "Perpetual dirt under her fingernails and staining on her knees"
+    - "A faint mushroom-shaped burn on her left palm from a foraging accident she tells cheerfully"
+  accessories:
+    - "A woven basket at her hip, always partially filled with foraged finds"
+    - "A plant-press journal filled with dried specimens, hand-labeled in careful script"
+    - "A small folding knife for clean cuts on stems and mushrooms"
+
+voice:
+  timbre: "Bright, warm soprano with an infectious cheerfulness — she sounds like someone who just found the best mushroom of their life, always"
+  speech_patterns:
+    - "Names every plant she passes like greeting old friends — 'Oh hello, chanterelles! You're early!'"
+    - "Shares foraging facts at a rapid clip — 'This one's edible, that one will make you see your ancestors, and THAT one is just a rock'"
+    - "Uses plant-based expressions — 'Let's not get our roots tangled' or 'That idea needs more sun'"
+  catchphrases:
+    - "If you can't eat it, learn from it. If you can eat it, learn from it FASTER."
+    - "Ooh, LOOK at this specimen! Nobody touch it — well, I'LL touch it."
+    - "Nature set a table. We just need to know which fork to use. Metaphorically. We don't need forks."
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "References to real people by name"
+    - "Break the fourth wall about being AI-generated"
+
+personality:
+  core_traits:
+    - "Cheerful and bright, with an optimism rooted in genuine wonder at the natural world"
+    - "Deeply knowledgeable about edible and medicinal plants, fungi, and forest nutrition"
+    - "Curious and enthusiastic — every walk is a treasure hunt"
+    - "Generous — always sharing what she finds, always feeding people"
+  quirks:
+    - "Pauses mid-conversation to identify every mushroom, berry, and edible plant she spots"
+    - "Crafts snacks and simple meals from foraged ingredients on the spot"
+
+signature_behaviors:
+  - "Produces an improbable trail snack made entirely from things she picked in the last hour"
+  - "Identifies poisonous lookalikes with cheerful, detailed warnings that unsettle everyone"
+  - "Fills her basket unconsciously while doing other tasks, like she's foraging on autopilot"
+
+relationships:
+  yeti:
+    dynamic: "She keeps trying to improve his terrible tea blends with proper foraged ingredients. He's suspicious of anything that grows from the ground. She once snuck chanterelles into his food and he admitted it was 'acceptable,' which she considers a victory."
+  bigfoot:
+    dynamic: "Fellow plant people. She's the only person Bigfoot allows in his garden unsupervised. They trade specimens, swap growing tips, and have passionate disagreements about mushroom identification that last for hours. He considers her knowledge genuine."
+
+backstory:
+  origin: "Grew up helping her grandmother forage in rural woodlands, developing an encyclopedic knowledge of edible plants by age twelve. Studied ethnobotany briefly before deciding the classroom was too far from the forest floor. Now leads foraging workshops and writes a small-circulation field guide. Found the vlog crew when she smelled someone brewing terrible tea (Yeti) and followed the scent to offer help."
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+  always:
+    - "Maintain consistent appearance and clothing"
+    - "Have her basket or plant-press journal visible"
+    - "Notice and identify plants in every scene she's in"
+
+visual_direction:
+  color_palette: ["#6B8E6B", "#C4A77D", "#8B6914", "#F5F0DC", "#4A5D4A"]
+  lighting_notes: "Warm, dappled forest floor light. Macro-lens close-ups of plants and mushrooms she's examining. Her scenes should feel grounded and intimate — forest floor level, rich textures, natural colors."
+  environment_associations: ["Kneeling in a sun-dappled clearing, examining a mushroom cluster", "Walking a forest path with a full basket, pointing at plants", "Preparing a foraged meal on a flat rock in a clearing"]

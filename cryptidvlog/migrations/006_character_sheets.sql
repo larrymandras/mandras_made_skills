@@ -23,7 +23,8 @@ ALTER TABLE character_reference_images
 ADD CONSTRAINT chk_pose_valid
 CHECK (pose IN ('front', 'three-quarter', 'profile', 'back',
                 'action-running', 'action-talking', 'close-up-face',
-                'environment', 'untagged'));
+                'environment', 'action-standing', 'emotion-expressive',
+                'untagged'));
 
 -- 4. Index for pose-based lookups
 CREATE INDEX IF NOT EXISTS idx_reference_images_pose

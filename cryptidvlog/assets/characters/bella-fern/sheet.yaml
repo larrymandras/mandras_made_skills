@@ -1,0 +1,80 @@
+version: 1
+name: bella-fern
+display_name: "Bella Fern"
+role: guest
+species: human
+archetype: "The Forest Herbalist"
+
+physical:
+  height: "5'6\""
+  build: "Willowy and graceful, moves like she's perpetually walking through waist-high ferns"
+  hair: "Long, dark, and adorned with small vine twists and the occasional wildflower"
+  eyes: "Deep brown, warm and knowing, with a steady, unhurried gaze"
+  skin: "Olive-toned with earth smudges she never bothers to wipe away"
+  clothing:
+    - "Flowing natural fabrics in earth tones — linen, hemp, undyed cotton"
+    - "Layered shawls and wraps that billow when she walks through the forest"
+    - "Barefoot or in soft leather sandals, regardless of terrain"
+  distinguishing_marks:
+    - "Faint green staining on her palms from years of crushing herbs"
+    - "A small crescent moon freckle on her right cheekbone"
+  accessories:
+    - "Charms and feathers woven into her hair and clothing"
+    - "A vine-wrapped walking staff with a carved fern spiral at the top"
+    - "A woven satchel that always smells of lavender and sage"
+
+voice:
+  timbre: "Soft, melodic, and unhurried — like wind through tall grass. Almost a whisper but somehow always audible."
+  speech_patterns:
+    - "Speaks almost entirely in metaphor and natural imagery — 'Your worry has shallow roots; let it fall'"
+    - "Pauses mid-sentence to listen to something no one else can hear"
+    - "Addresses plants and trees directly in conversation, as naturally as speaking to people"
+  catchphrases:
+    - "The forest provides, if you know how to ask."
+    - "This root remembers what the soil has forgotten."
+    - "Breathe with the canopy. In through the leaves, out through the moss."
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "References to real people by name"
+    - "Break the fourth wall about being AI-generated"
+
+personality:
+  core_traits:
+    - "Serene and grounded, with an inner stillness that calms everyone around her"
+    - "Mystical and poetic — sees the world through layers of meaning"
+    - "Nurturing and wise, offering remedies for body and spirit alike"
+    - "Deeply connected to the natural world in a way that borders on supernatural"
+  quirks:
+    - "Appears silently in scenes without anyone noticing her arrival"
+    - "Leaves small herb bundles at campsites for whoever needs them"
+    - "Sings softly to plants while tending them, and they seem to respond"
+
+signature_behaviors:
+  - "Brews herbal potions and tinctures beneath moonlight using foraged ingredients"
+  - "Places her palm against a tree trunk and closes her eyes before entering any new area"
+  - "Produces exactly the right herb or remedy from her satchel at the perfect moment"
+
+relationships:
+  yeti:
+    dynamic: "Finds his anxiety endearing and perpetually tries to calm him with teas and breathing exercises. Yeti is suspicious that her remedies work too well and has a sub-conspiracy about her. She finds this amusing."
+  bigfoot:
+    dynamic: "Old souls who understand each other. They share knowledge of plants and remedies freely. Bigfoot respects her connection to the forest as equal to his own, which is the highest compliment he gives."
+
+backstory:
+  origin: "Grew up in a remote mountain community where herbal medicine was the primary healthcare. Left to study botany but found academia too disconnected from the living world. Now wanders forest regions as an itinerant herbalist, appearing when needed and vanishing when her work is done. No one is quite sure where she lives."
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+  always:
+    - "Maintain consistent appearance and clothing"
+    - "Move with quiet grace and speak with gentle intention"
+    - "Be connected to plants, herbs, and the natural world in every scene"
+
+visual_direction:
+  color_palette: ["#6B8E6B", "#DDD5C0", "#8B7355", "#4A5D4A", "#F0EBE0"]
+  lighting_notes: "Soft, diffused light — moonlit clearings, misty mornings, golden filtered canopy light. She should look slightly ethereal, as if the light bends around her differently."
+  environment_associations: ["Moonlit forest clearings with herbs drying on string", "Mossy glades where she sits cross-legged among ferns", "A bubbling stream bank with gathered plants laid on stones"]

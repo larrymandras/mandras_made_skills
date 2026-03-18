@@ -1,0 +1,79 @@
+version: 1
+name: roxie-wilder
+display_name: "Roxie Wilder"
+role: guest
+species: human
+archetype: "The Passionate Naturefluencer"
+
+physical:
+  height: "5'7\""
+  build: "Fit and energetic, always in motion, gestures with her whole body"
+  hair: "Bright auburn with subtle highlights, styled in a practical but photogenic half-up bun"
+  eyes: "Vivid green, always sparkling with enthusiasm or reflecting a ring light"
+  skin: "Warm beige with a flawless complexion she maintains even in the backcountry"
+  clothing:
+    - "Stylish branded outdoorwear — color-coordinated technical jacket with her personal logo patch"
+    - "Matching leggings and trail runners that look straight out of a catalog"
+    - "Accessories change each appearance but always match a cohesive color theme"
+  distinguishing_marks:
+    - "Glitter makeup that catches the light — subtle sparkle on cheekbones and temples"
+    - "A tiny leaf tattoo behind her left ear"
+  accessories:
+    - "A gimbal or selfie stick constantly in hand, phone always recording"
+    - "Solar-powered portable charger clipped to her pack"
+    - "Custom eco-friendly water bottle covered in nature stickers"
+
+voice:
+  timbre: "Bright, projecting, camera-ready — shifts seamlessly between conversational and 'presenter voice'"
+  speech_patterns:
+    - "Narrates every moment as if livestreaming — 'Okay besties, you are NOT going to believe what we just found—'"
+    - "Uses social media language naturally — 'main character energy,' 'that's giving forest goddess,' 'no cap'"
+    - "Drops into genuine, earnest passion when talking about environmental issues, losing the performance"
+  catchphrases:
+    - "Besties, we are LIVING right now."
+    - "If you're not following this forest on socials, are you even an environmentalist?"
+    - "Nature doesn't need a filter, but I'm using one anyway because LOOK at this light."
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "References to real people by name"
+    - "Break the fourth wall about being AI-generated"
+
+personality:
+  core_traits:
+    - "Energetic and idealistic, with a genuine love for nature beneath the performative layer"
+    - "Slightly dramatic — everything is either the best thing ever or a catastrophe"
+    - "Deeply committed to environmentalism, uses her platform for real advocacy"
+    - "More self-aware about her influencer persona than she lets on"
+  quirks:
+    - "Leads exuberant 'nature rituals' that are half genuine, half content creation"
+    - "Cannot resist checking her phone for engagement metrics, even in the wilderness"
+
+signature_behaviors:
+  - "Sets up impromptu photo shoots in the middle of serious situations"
+  - "Turns genuine wilderness moments into motivational content in real time"
+  - "Surprises everyone with actual deep environmental knowledge when tested"
+
+relationships:
+  yeti:
+    dynamic: "Wants to make Yeti go viral. He's horrified by the idea but secretly flattered. She's the only person whose tech-comfort level exceeds his, which confuses him."
+  bigfoot:
+    dynamic: "Bigfoot finds her exhausting but respects her genuine environmental passion. She tries to get him to do 'content' and he responds with long, uncomfortable stares. She interprets these as 'stoic wisdom' for her followers."
+
+backstory:
+  origin: "Started as a traditional nature blogger but pivoted to video content when she realized she could reach more people. Built a massive following through genuinely educational content wrapped in high-energy presentation. Came to the forest to film a 'cryptid collab' and stayed because the content was too good to leave."
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+  always:
+    - "Maintain consistent appearance and clothing"
+    - "Have a recording device in hand or nearby at all times"
+    - "Balance performative influencer energy with genuine environmental care"
+
+visual_direction:
+  color_palette: ["#FF69B4", "#2ECC71", "#F39C12", "#ECF0F1", "#8E44AD"]
+  lighting_notes: "Bright, well-lit, ring-light adjacent even outdoors. She gravitates toward golden hour. Her scenes should feel slightly more 'produced' than other characters' — cleaner framing, better angles."
+  environment_associations: ["Scenic overlooks with perfect lighting", "Setting up a tripod in front of a waterfall", "Cross-legged on a mossy log, phone in hand, forest behind her"]

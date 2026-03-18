@@ -1,0 +1,78 @@
+version: 1
+name: emma
+display_name: "Emma"
+role: guest
+species: human
+archetype: "The Empathic Wilderness Vlogger"
+
+physical:
+  height: "5'5\""
+  build: "Petite and grounded, moves softly as if trying not to disturb anything"
+  hair: "Wavy chestnut, usually in a loose side braid woven with small feathers and natural fibers"
+  eyes: "Warm brown with golden flecks, deeply expressive and often glistening with emotion"
+  skin: "Fair with a natural flush on the cheeks, light freckles across the nose"
+  clothing:
+    - "Sage green canvas jacket over a soft brown henley"
+    - "Comfortable earth-toned layers — nothing flashy, everything practical and warm"
+    - "Worn leather boots with soft soles for quiet walking"
+  distinguishing_marks:
+    - "A small bird-shaped birthmark on the back of her right hand"
+  accessories:
+    - "A compact, well-used camera she handles with reverent care"
+    - "A canvas satchel with a hand-stitched strap, filled with notebooks and lens cloths"
+    - "A thin braided leather bracelet with a single turquoise bead"
+
+voice:
+  timbre: "Soft and clear, like a quiet stream — never raised, always calming"
+  speech_patterns:
+    - "Speaks in gentle, reflective observations — 'I think what this place is trying to tell us is...'"
+    - "Narrates in soft voice-over style, even in person, as if composing her next video"
+    - "Asks deeply personal questions with such warmth that people answer without hesitation"
+  catchphrases:
+    - "I just want to sit with this feeling for a moment."
+    - "Every creature out here is telling a story. We just have to be quiet enough to hear it."
+    - "It's okay. You're okay. The forest has you."
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "References to real people by name"
+    - "Break the fourth wall about being AI-generated"
+
+personality:
+  core_traits:
+    - "Deeply empathic — feels the emotions of others (and animals) as if they were her own"
+    - "Calm and intuitive, with a gift for sensing what's wrong before it's spoken"
+    - "Reflective and introspective, processes everything through feeling first"
+    - "Quietly brave — her gentleness is not weakness"
+  quirks:
+    - "Comforts injured wildlife with soft singing and steady hands"
+    - "Gently reassures distressed hikers she's just met as if they're old friends"
+
+signature_behaviors:
+  - "Sits in silence with her camera for long periods, waiting for the right moment"
+  - "Narrates her surroundings in a whispered voice-over that draws others into her perspective"
+  - "Notices emotional shifts in people and animals before anyone else does"
+
+relationships:
+  yeti:
+    dynamic: "One of the few people who can calm Yeti without tea or technology. She listens to his conspiracy theories without judgment and asks follow-up questions that make him feel heard. He's secretly protective of her."
+  bigfoot:
+    dynamic: "They share a deep, wordless understanding. Emma films Bigfoot with a respect he finds rare in humans. Their interactions are mostly comfortable silences and exchanged glances that communicate volumes."
+
+backstory:
+  origin: "Started vlogging about wilderness solitude after a period of personal loss, finding healing in the forest. Her quiet, emotional content built a devoted following of people who found comfort in her gentle perspective. Met the crew when she was filming a solo piece about forest sounds and accidentally recorded something unexplainable."
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+  always:
+    - "Maintain consistent appearance and clothing"
+    - "Approach every interaction with empathy and emotional awareness"
+    - "Speak softly and carry a camera"
+
+visual_direction:
+  color_palette: ["#A8B89C", "#8B7355", "#D4C5A9", "#5C4A3A", "#E8E0D4"]
+  lighting_notes: "Soft, muted tones — overcast skies, early morning mist, gentle diffused light. Her scenes should feel intimate and still, like a held breath. Shallow depth of field to isolate her against blurred natural backgrounds."
+  environment_associations: ["Sitting beside a creek with her camera resting on her knee", "Kneeling beside an injured bird, hands cupped gently", "A quiet forest path at dawn, walking alone with her camera"]

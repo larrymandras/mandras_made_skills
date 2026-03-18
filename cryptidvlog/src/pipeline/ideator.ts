@@ -9,6 +9,7 @@
 import { runTextAnalysis } from '../ai/claude.js';
 import { dbSelect, dbUpdate } from '../db/client.js';
 import { loadSheet, getSheetSummaryForPrompt } from '../characters/index.js';
+import { getRandomGuest } from '../db/characters.js';
 import { logger } from '../utils/logger.js';
 
 export interface Concept {
@@ -16,6 +17,7 @@ export interface Concept {
   hook: string;
   sceneCount: number;
   characterFocus: 'yeti' | 'bigfoot' | 'both';
+  guestCharacter?: string;
   estimatedCost: number;
   abEligible: boolean;
   abPriorityScore: number;
@@ -91,7 +93,27 @@ export async function generateConcept(): Promise<Concept> {
     getSheetSummaryForPrompt('bigfoot'),
   ]);
 
-  const prompt = buildIdeatorPrompt(yetiSummary, bigfootSummary, hookType, setting);
+  // ~30% chance of including a guest character
+  let guestName: string | undefined;
+  let guestSummary: string | undefined;
+  if (Math.random() < 0.3) {
+    const guest = await getRandomGuest();
+    if (guest) {
+      guestName = guest['name'] as string;
+      logger.info('Ideator: including guest character', { guest: guestName });
+      try {
+        guestSummary = await getSheetSummaryForPrompt(guestName);
+      } catch (err) {
+        logger.warn('Ideator: failed to load guest sheet, continuing without guest', {
+          guest: guestName,
+          error: (err as Error).message,
+        });
+        guestName = undefined;
+      }
+    }
+  }
+
+  const prompt = buildIdeatorPrompt(yetiSummary, bigfootSummary, hookType, setting, guestSummary);
 
   let concept = await tryParseConceptFromClaude(prompt);
 
@@ -108,6 +130,7 @@ export async function generateConcept(): Promise<Concept> {
 
   concept.fromQueue = false;
   concept.characterSheetVersions = sheetVersions;
+  if (guestName) concept.guestCharacter = guestName;
 
   return concept;
 }
@@ -121,7 +144,12 @@ function buildIdeatorPrompt(
   bigfootSummary: string,
   hookType: string,
   setting: string,
+  guestSummary?: string,
 ): string {
+  const guestBlock = guestSummary
+    ? `\n\n---\n\nA GUEST CHARACTER is appearing in this episode:\n\n${guestSummary}\n\nIncorporate the guest naturally into the concept. The guest should complement or contrast with the lead characters. The characterFocus still refers to LEAD characters only.`
+    : '';
+
   return `You are the creative ideator for a cryptid vlog channel starring two characters: Yeti and Bigfoot.
 
 Here are their personality profiles:
@@ -132,7 +160,7 @@ ${yetiSummary}
 
 ---
 ${bigfootSummary}
----
+---${guestBlock}
 
 Generate a video concept using:
 - Hook type: "${hookType}"

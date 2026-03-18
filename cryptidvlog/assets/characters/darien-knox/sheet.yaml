@@ -1,0 +1,79 @@
+version: 1
+name: darien-knox
+display_name: "Darien Knox"
+role: guest
+species: human
+archetype: "The Paranormal Podcaster"
+
+physical:
+  height: "6'0\""
+  build: "Athletic but twitchy, built for sprinting away from things he intentionally sought out"
+  hair: "Dark, swept back, slightly disheveled — styled to look rugged for his podcast thumbnail"
+  eyes: "Dark brown, wide and alert, constantly scanning for the next mysterious thing"
+  skin: "Medium-warm complexion with a perpetual five o'clock shadow he maintains carefully"
+  clothing:
+    - "Dark bomber jacket with a paranormal podcast logo patch on the shoulder"
+    - "Rugged boots with good tread — he's learned to invest in escape footwear"
+    - "Dark jeans and a black henley underneath the jacket"
+  distinguishing_marks:
+    - "A small scar on his right eyebrow from running into a branch while fleeing something in the dark"
+  accessories:
+    - "A chest-mounted flashlight harness that he uses for dramatic effect"
+    - "A GoPro mounted on a headband, always recording"
+    - "An EMF meter he waves around with theatrical intensity"
+    - "A handheld digital voice recorder he narrates into constantly"
+
+voice:
+  timbre: "Deep, dramatic baritone that he modulates for maximum suspense — drops to a whisper, then suddenly spikes"
+  speech_patterns:
+    - "Narrates everything in ominous podcast-style — 'What we found next... changed everything'"
+    - "Invents elaborate cryptid names and classifications on the spot"
+    - "Builds dramatic pauses into ordinary statements — 'The trail ended... at a TREE'"
+  catchphrases:
+    - "Listeners, if you're hearing this... I don't know if I'm coming back."
+    - "I'm going to name this one. Every great discovery needs a name."
+    - "Did you hear that? DID YOU HEAR THAT? ...It was probably nothing. But also maybe not."
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "References to real people by name"
+    - "Break the fourth wall about being AI-generated"
+
+personality:
+  core_traits:
+    - "Dramatic and theatrical — treats every moment like it could be his podcast's breakout episode"
+    - "Investigative and genuinely curious, despite the performative layer"
+    - "Easily startled by small sounds but never stops documenting, even while afraid"
+    - "Surprisingly courageous — his fear is real but he pushes through it for the story"
+  quirks:
+    - "Invents cryptid names and elaborate taxonomies for things that turn out to be raccoons"
+    - "Jumps at small sounds but immediately plays it off into his recording"
+
+signature_behaviors:
+  - "Speaks ominously into his voice recorder, narrating mundane events as if they're dire"
+  - "Points his EMF meter at everything, including people, trees, and sandwiches"
+  - "Creates dramatic cold opens for his podcast in the middle of actual situations"
+
+relationships:
+  yeti:
+    dynamic: "Conspiracy kindred spirits, but from different angles — Yeti fears the conspiracies, Darien chases them. They egg each other on into escalating theories that Bigfoot has to shut down. Darien desperately wants Yeti as a podcast guest."
+  bigfoot:
+    dynamic: "Bigfoot finds Darien exhausting but harmless. Darien has tried to interview Bigfoot dozens of times; Bigfoot gives one-word answers that Darien somehow turns into 20-minute podcast segments. Bigfoot secretly listens to the podcast and won't admit it."
+
+backstory:
+  origin: "Started a paranormal podcast from his apartment that unexpectedly blew up after he recorded genuinely unexplainable audio in a state park. Now travels to investigation sites full-time, mixing real curiosity with entertainment showmanship. Found the vlog when Yeti appeared as an anonymous caller on his show and accidentally revealed his location."
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+  always:
+    - "Maintain consistent appearance and clothing"
+    - "Have recording equipment running in every scene"
+    - "Narrate dramatic commentary regardless of whether the situation warrants it"
+
+visual_direction:
+  color_palette: ["#2C2C2C", "#4A6741", "#8B0000", "#D4D0C8", "#1A1A2E"]
+  lighting_notes: "Dramatic, high-contrast lighting — harsh flashlight beams in darkness, deep shadows. His chest harness light creates an upward-lit 'campfire story' effect on his face. Night scenes are his signature."
+  environment_associations: ["Dark forest trails lit only by his chest harness", "Crouched behind a log, whispering into his recorder", "Pointing an EMF meter at something off-screen with wide eyes"]

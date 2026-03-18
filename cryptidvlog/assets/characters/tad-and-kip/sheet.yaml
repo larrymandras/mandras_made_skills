@@ -1,0 +1,79 @@
+version: 1
+name: tad-and-kip
+display_name: "Tad & Kip"
+role: guest
+species: human
+archetype: "The Hapless Hiking Duo"
+
+physical:
+  height: "Tad: 6'1\", Kip: 5'7\""
+  build: "Tad: gangly and over-eager, all forward momentum. Kip: stocky and reluctant, perpetually dragging behind."
+  hair: "Tad: short-cropped brown, always has a sweatband. Kip: shaggy dirty-blond, hasn't been cut in months."
+  eyes: "Tad: enthusiastic brown, pupils dilated with ambition. Kip: tired grey-blue, half-lidded with resignation."
+  skin: "Both perpetually bug-bitten, sunburned in patches, with random scratches from bushes"
+  clothing:
+    - "Tad: brand-new neon hiking gear — lime green jacket, reflective orange pack, tags sometimes still attached"
+    - "Kip: outdated flannel over a faded band t-shirt, cargo shorts regardless of weather, ancient sneakers"
+    - "Both overpacked with chaotic, poorly organized gear spilling from their packs"
+  distinguishing_marks:
+    - "Tad: a motivational quote temporary tattoo on his forearm that changes each appearance"
+    - "Kip: a permanent coffee stain on the front of every shirt he owns"
+  accessories:
+    - "Tad: a brand-new GPS device he cannot operate, a whistle he blows too often"
+    - "Kip: a crumpled paper map from the wrong region, a thermos of lukewarm coffee"
+    - "Both: matching friendship bracelets they'll deny having"
+
+voice:
+  timbre: "Tad: loud, projecting tenor full of unearned confidence. Kip: dry, mumbling baritone full of earned complaints."
+  speech_patterns:
+    - "Tad finishes Kip's sentences incorrectly and Kip doesn't bother correcting him"
+    - "Kip's complaints are delivered in a deadpan monotone that makes them funnier"
+    - "They argue in a rhythm that suggests years of practice — it's practically a comedy routine"
+  catchphrases:
+    - "Tad: 'This is the one, Kip. I can FEEL it.'"
+    - "Kip: 'You said that about the last seven trails. Two of them were driveways.'"
+    - "Tad: 'Adventure waits for no man!' Kip: 'Adventure can wait. I need to sit down.'"
+  never_say:
+    - "Slurs or hate speech of any kind"
+    - "References to real people by name"
+    - "Break the fourth wall about being AI-generated"
+
+personality:
+  core_traits:
+    - "Tad: overly ambitious, boundlessly optimistic, zero outdoor competence"
+    - "Kip: charming complainer, secretly capable, pretends everything is terrible"
+    - "Together: deeply loyal despite constant bickering, genuinely enjoy each other's company"
+    - "Their combined navigation skills are somehow worse than either one individually"
+  quirks:
+    - "Loud, off-key singing on the trail — Tad sings motivational pop, Kip hums funeral dirges"
+    - "Incorrect map readings delivered with total confidence by Tad, silently tolerated by Kip"
+
+signature_behaviors:
+  - "Constant wrong turns that somehow lead them to important plot locations"
+  - "Comedic misunderstandings with wildlife — mistaking a raccoon for a cryptid, etc."
+  - "Tad charging ahead while Kip sits down on a rock and refuses to move until bribed"
+
+relationships:
+  yeti:
+    dynamic: "Tad idolizes Yeti's tech knowledge and asks wildly wrong questions. Kip and Yeti share a mutual 'why am I here' energy. Yeti finds them exhausting but can't help trying to fix their GPS."
+  bigfoot:
+    dynamic: "Bigfoot watches them like a parent watching toddlers near a cliff. Has quietly rescued them from their own bad decisions at least a dozen times. Kip's coffee thermos once impressed Bigfoot, earning his grudging respect."
+
+backstory:
+  origin: "College roommates who made a bet about completing a famous trail and never stopped hiking despite being terrible at it. Tad buys all the latest gear and reads none of the instructions. Kip comes along because someone has to keep Tad alive. They stumbled into Bigfoot's territory after following a map that turned out to be a restaurant placemat."
+
+constraints:
+  never_do:
+    - "Harm another character physically (slapstick accidents OK)"
+    - "Use real-world slurs or hate speech"
+    - "Reference real people by name"
+    - "Break the fourth wall about being AI-generated"
+  always:
+    - "Maintain consistent appearance and clothing"
+    - "Function as a comedic duo — their humor comes from contrast and bickering"
+    - "Be lost, confused, or heading in the wrong direction in every scene"
+
+visual_direction:
+  color_palette: ["#BFFF00", "#FF6347", "#4682B4", "#8B4513", "#F5F5DC"]
+  lighting_notes: "Flat, unflattering midday sun — they're always hiking at the worst time. Harsh shadows emphasize their disheveled state. Contrast Tad's neon gear against Kip's muted tones."
+  environment_associations: ["Wrong side of a trail marker, looking confused", "Sitting on rocks surrounded by scattered gear", "A clearly wrong turn with a 'WRONG WAY' sign they didn't see"]
