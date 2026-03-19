@@ -10,6 +10,7 @@ import { runTextAnalysis } from '../ai/claude.js';
 import { dbSelect, dbUpdate } from '../db/client.js';
 import { loadSheet, getSheetSummaryForPrompt } from '../characters/index.js';
 import { getRandomGuest } from '../db/characters.js';
+import { getRecentConceptHistory } from '../db/videos.js';
 import { logger } from '../utils/logger.js';
 
 export interface Concept {
@@ -85,13 +86,17 @@ export async function generateConcept(): Promise<Concept> {
   // -----------------------------------------------------------------------
   logger.info('Ideator: auto-generating concept');
 
-  const hookType = pickRandom(HOOK_TYPES);
-  const setting = pickRandom(SETTINGS);
-
-  const [yetiSummary, bigfootSummary] = await Promise.all([
+  const [yetiSummary, bigfootSummary, recentConcepts] = await Promise.all([
     getSheetSummaryForPrompt('yeti'),
     getSheetSummaryForPrompt('bigfoot'),
+    getRecentConceptHistory(50),
   ]);
+
+  // Pick hook/setting, avoiding hooks overused in recent episodes
+  const recentHooks = recentConcepts.slice(0, 10).map((c) => c.hook);
+  const freshHooks = HOOK_TYPES.filter((h) => !recentHooks.includes(h));
+  const hookType = pickRandom(freshHooks.length > 0 ? freshHooks : HOOK_TYPES);
+  const setting = pickRandom(SETTINGS);
 
   // ~30% chance of including a guest character
   let guestName: string | undefined;
@@ -113,7 +118,7 @@ export async function generateConcept(): Promise<Concept> {
     }
   }
 
-  const prompt = buildIdeatorPrompt(yetiSummary, bigfootSummary, hookType, setting, guestSummary);
+  const prompt = buildIdeatorPrompt(yetiSummary, bigfootSummary, hookType, setting, guestSummary, recentConcepts);
 
   let concept = await tryParseConceptFromClaude(prompt);
 
@@ -132,6 +137,19 @@ export async function generateConcept(): Promise<Concept> {
   concept.characterSheetVersions = sheetVersions;
   if (guestName) concept.guestCharacter = guestName;
 
+  // Dedup safety net: reject if title is too similar to a recent concept
+  if (recentConcepts.length > 0 && isTooSimilar(concept.conceptTitle, recentConcepts)) {
+    logger.warn('Ideator: generated concept too similar to existing, retrying once');
+    const retryPrompt = buildIdeatorPrompt(yetiSummary, bigfootSummary, pickRandom(HOOK_TYPES), pickRandom(SETTINGS), guestSummary, recentConcepts);
+    const retryConcept = await tryParseConceptFromClaude(retryPrompt);
+    if (retryConcept && !isTooSimilar(retryConcept.conceptTitle, recentConcepts)) {
+      retryConcept.fromQueue = false;
+      retryConcept.characterSheetVersions = sheetVersions;
+      if (guestName) retryConcept.guestCharacter = guestName;
+      return retryConcept;
+    }
+  }
+
   return concept;
 }
 
@@ -145,9 +163,14 @@ function buildIdeatorPrompt(
   hookType: string,
   setting: string,
   guestSummary?: string,
+  recentConcepts?: { title: string; hook: string }[],
 ): string {
   const guestBlock = guestSummary
     ? `\n\n---\n\nA GUEST CHARACTER is appearing in this episode:\n\n${guestSummary}\n\nIncorporate the guest naturally into the concept. The guest should complement or contrast with the lead characters. The characterFocus still refers to LEAD characters only.`
+    : '';
+
+  const historyBlock = recentConcepts && recentConcepts.length > 0
+    ? `\n\n---\n\n## Previously Created Episodes (DO NOT DUPLICATE)\nThe following concepts have already been produced. Your new concept MUST be substantially different in title, premise, and angle. Do not reuse the same jokes, scenarios, or story beats.\n\n${recentConcepts.map((c) => `- "${c.title}" (hook: ${c.hook})`).join('\n')}\n`
     : '';
 
   return `You are the creative ideator for a cryptid vlog channel starring two characters: Yeti and Bigfoot.
@@ -160,7 +183,7 @@ ${yetiSummary}
 
 ---
 ${bigfootSummary}
----${guestBlock}
+---${guestBlock}${historyBlock}
 
 Generate a video concept using:
 - Hook type: "${hookType}"
@@ -247,6 +270,30 @@ async function tryParseConceptFromClaude(prompt: string): Promise<Concept | null
     });
     return null;
   }
+}
+
+/**
+ * Check if a new title is too similar to any recent concept.
+ * Uses normalized word overlap — if 60%+ of significant words match, it's a dupe.
+ */
+function isTooSimilar(newTitle: string, recent: { title: string; hook: string }[]): boolean {
+  const normalize = (s: string) =>
+    s.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter((w) => w.length > 2);
+
+  const newWords = new Set(normalize(newTitle));
+  if (newWords.size === 0) return false;
+
+  for (const existing of recent) {
+    const existingWords = normalize(existing.title);
+    if (existingWords.length === 0) continue;
+
+    const overlap = existingWords.filter((w) => newWords.has(w)).length;
+    const similarity = overlap / Math.max(newWords.size, existingWords.length);
+
+    if (similarity >= 0.6) return true;
+  }
+
+  return false;
 }
 
 function buildFallbackConcept(hookType: string, setting: string): Concept {

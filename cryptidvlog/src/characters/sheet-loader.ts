@@ -89,6 +89,64 @@ const VisualDirectionSchema = z.object({
   pose_personality_map: z.record(z.string(), z.string()),
 });
 
+// ---------------------------------------------------------------------------
+// Guest character schemas (lighter structure)
+// ---------------------------------------------------------------------------
+
+const GuestPhysicalSchema = z.object({
+  height: z.string().optional(),
+  build: z.string(),
+  hair: z.string().optional(),
+  eyes: z.string().optional(),
+  skin: z.string().optional(),
+  clothing: z.array(z.string()).optional(),
+  distinguishing_marks: z.array(z.string()).optional(),
+  accessories: z.array(z.string()).optional(),
+}).passthrough();
+
+const GuestVoiceSchema = z.object({
+  timbre: z.string(),
+  speech_patterns: z.array(z.string()),
+  catchphrases: z.array(z.string()),
+  never_say: z.array(z.string()).optional(),
+}).passthrough();
+
+const GuestPersonalitySchema = z.object({
+  core_traits: z.array(z.string()),
+  quirks: z.array(z.string()),
+}).passthrough();
+
+const GuestBackstorySchema = z.object({
+  origin: z.string(),
+}).passthrough();
+
+const GuestVisualDirectionSchema = z.object({
+  color_palette: z.array(z.string()),
+  lighting_notes: z.string(),
+  environment_associations: z.array(z.string()),
+}).passthrough();
+
+const GuestCharacterSheetSchema = z.object({
+  version: z.number().int().positive(),
+  name: z.string(),
+  species: z.string(),
+  role: z.literal('guest'),
+  display_name: z.string().optional(),
+  archetype: z.string().optional(),
+  signature_behaviors: z.array(z.string()).optional(),
+  physical: GuestPhysicalSchema,
+  voice: GuestVoiceSchema,
+  personality: GuestPersonalitySchema,
+  relationships: RelationshipsSchema,
+  backstory: GuestBackstorySchema,
+  constraints: ConstraintsSchema,
+  visual_direction: GuestVisualDirectionSchema,
+});
+
+// ---------------------------------------------------------------------------
+// Lead character schema (full structure)
+// ---------------------------------------------------------------------------
+
 export const CharacterSheetSchema = z.object({
   version: z.number().int().positive(),
   name: z.string(),
@@ -107,6 +165,8 @@ export const CharacterSheetSchema = z.object({
 });
 
 export type CharacterSheet = z.infer<typeof CharacterSheetSchema>;
+export type GuestCharacterSheet = z.infer<typeof GuestCharacterSheetSchema>;
+export type AnyCharacterSheet = CharacterSheet | GuestCharacterSheet;
 
 // ---------------------------------------------------------------------------
 // In-memory cache
@@ -114,7 +174,7 @@ export type CharacterSheet = z.infer<typeof CharacterSheetSchema>;
 
 const CACHE_TTL_MS = 300_000; // 5 minutes
 
-const sheetCache = new Map<string, { sheet: CharacterSheet; loadedAt: number }>();
+const sheetCache = new Map<string, { sheet: AnyCharacterSheet; loadedAt: number }>();
 
 /** Clear the entire sheet cache (useful for tests). */
 export function clearSheetCache(): void {
@@ -132,7 +192,7 @@ export function clearSheetCache(): void {
  * parses it as YAML, validates with the Zod schema, and caches the result
  * for 5 minutes.
  */
-export async function loadSheet(name: string): Promise<CharacterSheet> {
+export async function loadSheet(name: string): Promise<AnyCharacterSheet> {
   const cached = sheetCache.get(name);
   if (cached && Date.now() - cached.loadedAt < CACHE_TTL_MS) {
     return cached.sheet;
@@ -150,18 +210,28 @@ export async function loadSheet(name: string): Promise<CharacterSheet> {
 
   const parsed: unknown = parse(raw);
 
-  const result = CharacterSheetSchema.safeParse(parsed);
-  if (!result.success) {
-    const issues = result.error.issues
-      .map((i) => `  - ${i.path.join('.')}: ${i.message}`)
-      .join('\n');
-    throw new Error(
-      `Character sheet validation failed for "${name}":\n${issues}`,
-    );
+  // Try lead schema first, then guest schema
+  const leadResult = CharacterSheetSchema.safeParse(parsed);
+  if (leadResult.success) {
+    sheetCache.set(name, { sheet: leadResult.data, loadedAt: Date.now() });
+    return leadResult.data;
   }
 
-  sheetCache.set(name, { sheet: result.data, loadedAt: Date.now() });
-  return result.data;
+  const guestResult = GuestCharacterSheetSchema.safeParse(parsed);
+  if (guestResult.success) {
+    sheetCache.set(name, { sheet: guestResult.data, loadedAt: Date.now() });
+    return guestResult.data;
+  }
+
+  // Both failed — report guest errors if role is 'guest', lead errors otherwise
+  const roleHint = (parsed as Record<string, unknown>)?.role;
+  const errorResult = roleHint === 'guest' ? guestResult : leadResult;
+  const issues = errorResult.error.issues
+    .map((i) => `  - ${i.path.join('.')}: ${i.message}`)
+    .join('\n');
+  throw new Error(
+    `Character sheet validation failed for "${name}":\n${issues}`,
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -218,43 +288,64 @@ export async function getSheetSummaryForPrompt(name: string): Promise<string> {
   if (s.archetype) lines.push(`Archetype: ${s.archetype}`);
   lines.push('');
 
-  // Physical
+  // Physical — handle both lead (nested) and guest (flat) schemas
   lines.push('## Physical Description');
-  lines.push(`Height: ${s.physical.height_ft[0]}–${s.physical.height_ft[1]} ft`);
-  lines.push(`Build: ${s.physical.build}`);
-  lines.push(`Fur: ${s.physical.fur.color} — ${s.physical.fur.texture}`);
-  lines.push(`Seasonal variation: ${s.physical.fur.seasonal_variation}`);
-  lines.push(`Eyes: ${s.physical.face.eyes}`);
-  lines.push(`Brow: ${s.physical.face.brow}`);
-  lines.push(`Nose: ${s.physical.face.nose}`);
-  lines.push(`Mouth: ${s.physical.face.mouth}`);
-  lines.push(`Teeth: ${s.physical.face.teeth}`);
-  lines.push(`Default expression: ${s.physical.face.expression_default}`);
-  lines.push(`Hands: ${s.physical.hands}`);
-  lines.push(`Feet: ${s.physical.feet}`);
-  lines.push(`Distinguishing marks: ${s.physical.distinguishing_marks.join('; ')}`);
-  lines.push(`Clothing: ${s.physical.clothing.join('; ')}`);
+  if ('height_ft' in s.physical) {
+    // Lead character schema
+    const p = s.physical as z.infer<typeof PhysicalSchema>;
+    lines.push(`Height: ${p.height_ft[0]}–${p.height_ft[1]} ft`);
+    lines.push(`Build: ${p.build}`);
+    lines.push(`Fur: ${p.fur.color} — ${p.fur.texture}`);
+    lines.push(`Seasonal variation: ${p.fur.seasonal_variation}`);
+    lines.push(`Eyes: ${p.face.eyes}`);
+    lines.push(`Brow: ${p.face.brow}`);
+    lines.push(`Nose: ${p.face.nose}`);
+    lines.push(`Mouth: ${p.face.mouth}`);
+    lines.push(`Teeth: ${p.face.teeth}`);
+    lines.push(`Default expression: ${p.face.expression_default}`);
+    lines.push(`Hands: ${p.hands}`);
+    lines.push(`Feet: ${p.feet}`);
+    lines.push(`Distinguishing marks: ${p.distinguishing_marks.join('; ')}`);
+    lines.push(`Clothing: ${p.clothing.join('; ')}`);
+  } else {
+    // Guest character schema
+    const p = s.physical as z.infer<typeof GuestPhysicalSchema>;
+    if (p.height) lines.push(`Height: ${p.height}`);
+    lines.push(`Build: ${p.build}`);
+    if (p.hair) lines.push(`Hair: ${p.hair}`);
+    if (p.eyes) lines.push(`Eyes: ${p.eyes}`);
+    if (p.skin) lines.push(`Skin: ${p.skin}`);
+    if (p.clothing) lines.push(`Clothing: ${p.clothing.join('; ')}`);
+    if (p.distinguishing_marks) lines.push(`Distinguishing marks: ${p.distinguishing_marks.join('; ')}`);
+    if (p.accessories) lines.push(`Accessories: ${p.accessories.join('; ')}`);
+  }
   lines.push('');
 
-  // Voice
+  // Voice — handle both schemas
   lines.push('## Voice & Speech');
   lines.push(`Timbre: ${s.voice.timbre}`);
   lines.push(`Speech patterns:`);
   for (const p of s.voice.speech_patterns) lines.push(`  - ${p}`);
   lines.push(`Catchphrases:`);
   for (const c of s.voice.catchphrases) lines.push(`  - "${c}"`);
-  lines.push(`Verbal tics:`);
-  for (const t of s.voice.verbal_tics) lines.push(`  - ${t}`);
+  if ('verbal_tics' in s.voice && Array.isArray(s.voice.verbal_tics) && s.voice.verbal_tics.length > 0) {
+    lines.push(`Verbal tics:`);
+    for (const t of s.voice.verbal_tics) lines.push(`  - ${t}`);
+  }
   lines.push('');
 
   // Personality
   lines.push('## Personality');
   lines.push('Core traits:');
   for (const t of s.personality.core_traits) lines.push(`  - ${t}`);
-  lines.push('Fears:');
-  for (const f of s.personality.fears) lines.push(`  - ${f}`);
-  lines.push('Loves:');
-  for (const l of s.personality.loves) lines.push(`  - ${l}`);
+  if ('fears' in s.personality && Array.isArray(s.personality.fears)) {
+    lines.push('Fears:');
+    for (const f of s.personality.fears) lines.push(`  - ${f}`);
+  }
+  if ('loves' in s.personality && Array.isArray(s.personality.loves)) {
+    lines.push('Loves:');
+    for (const l of s.personality.loves) lines.push(`  - ${l}`);
+  }
   lines.push('Quirks:');
   for (const q of s.personality.quirks) lines.push(`  - ${q}`);
   lines.push('');
@@ -322,15 +413,22 @@ export async function getVisualDirectionForPrompt(name: string): Promise<string>
   lines.push('');
   lines.push(`Lighting: ${v.lighting_notes}`);
   lines.push('');
-  lines.push('Preferred camera angles:');
-  for (const a of v.camera_angles_preferred) lines.push(`  - ${a}`);
-  lines.push('');
+
+  if ('camera_angles_preferred' in v && Array.isArray(v.camera_angles_preferred)) {
+    lines.push('Preferred camera angles:');
+    for (const a of v.camera_angles_preferred) lines.push(`  - ${a}`);
+    lines.push('');
+  }
+
   lines.push('Environment associations:');
   for (const e of v.environment_associations) lines.push(`  - ${e}`);
-  lines.push('');
-  lines.push('Pose personality map:');
-  for (const [pose, desc] of Object.entries(v.pose_personality_map)) {
-    lines.push(`  ${pose}: ${desc}`);
+
+  if ('pose_personality_map' in v && typeof v.pose_personality_map === 'object' && v.pose_personality_map) {
+    lines.push('');
+    lines.push('Pose personality map:');
+    for (const [pose, desc] of Object.entries(v.pose_personality_map as Record<string, string>)) {
+      lines.push(`  ${pose}: ${desc}`);
+    }
   }
 
   return lines.join('\n');

@@ -29,6 +29,27 @@ export async function getBufferDepth(): Promise<number> {
   return rows.filter((r) => !(r as { published_at?: unknown }).published_at).length;
 }
 
+/**
+ * Fetch recent concept titles and hooks to prevent duplicate ideas.
+ * Returns the last `limit` concepts ordered by creation date.
+ */
+export async function getRecentConceptHistory(limit = 50): Promise<{ title: string; hook: string }[]> {
+  const rows = await dbSelect('videos', {});
+  // Sort by created_at descending and take the most recent
+  const sorted = rows
+    .sort((a, b) => {
+      const aDate = new Date(a['created_at'] as string).getTime();
+      const bDate = new Date(b['created_at'] as string).getTime();
+      return bDate - aDate;
+    })
+    .slice(0, limit);
+
+  return sorted.map((r) => ({
+    title: r['concept_title'] as string,
+    hook: r['hook'] as string,
+  }));
+}
+
 // NOTE: dbUpdate not yet implemented in client.ts — add it in Phase 1
 export async function updateVideoStatus(
   _videoId: string,
